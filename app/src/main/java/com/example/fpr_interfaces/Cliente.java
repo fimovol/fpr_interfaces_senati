@@ -7,23 +7,23 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Cliente extends AppCompatActivity {
-    TextView asd;
+    Toolbar mActionBarToolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cliente);
-        asd = findViewById(R.id.textView2);
         String newString;
         Bundle extras = getIntent().getExtras();
         if(extras == null) {
             newString= null;
         } else {
             newString= extras.getString("email");
-            asd.setText(newString);
+            setTitle(newString);
         }
     }
     public void verperfilterapeuta(View v){

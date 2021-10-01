@@ -16,10 +16,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="buscar" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="30dp"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -27,10 +42,9 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center"
-                android:layout_marginRight="30dp"
                 android:gravity="center"
-                android:orientation="vertical"
-                android:onClick="elegirTerapia">
+                android:onClick="elegirTerapia"
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -57,15 +71,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="verperfilterapeuta"
-                    android:text="perfil terapeuta"
-                    android:textSize="10dp"
                     android:shadowColor="@color/black"
                     android:shadowDx="4"
+                    android:shadowDy="4"
                     android:shadowRadius="3"
-                    android:shadowDy="4"/>
+                    android:text="perfil terapeuta"
+                    android:textSize="10dp" />
 
             </LinearLayout>
-
+            <Space
+                android:layout_width="25dp"
+                android:layout_height="match_parent" />
             <LinearLayout
                 android:layout_width="150dp"
                 android:layout_height="150dp"
@@ -108,7 +124,9 @@
 
             </LinearLayout>
         </LinearLayout>
-
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="25dp" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -119,7 +137,6 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center"
-                android:layout_marginRight="30dp"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:onClick="elegirTerapia">
@@ -157,7 +174,9 @@
                     android:shadowDy="4"/>
 
             </LinearLayout>
-
+            <Space
+                android:layout_width="25dp"
+                android:layout_height="match_parent" />
             <LinearLayout
                 android:layout_width="150dp"
                 android:layout_height="150dp"
@@ -205,7 +224,8 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
 
         <Button
             android:onClick="deslogeate"
@@ -217,13 +237,7 @@
             android:shadowColor="@color/black"
             android:shadowDx="4"
             android:shadowRadius="3"
-            android:shadowDy="4"/>
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|right"
-            android:text="TextView" />
+            android:shadowDy="4"
+            />
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
