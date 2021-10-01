@@ -20,6 +20,10 @@
             android:textSize="30dp"
             android:textColor="@color/black"/>
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+
         <EditText
             android:id="@+id/usuario"
             android:layout_width="wrap_content"
@@ -30,6 +34,10 @@
             android:text="" />
 
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+
         <EditText
             android:id="@+id/contrasena"
             android:layout_width="wrap_content"
@@ -38,6 +46,10 @@
             android:hint="contraseña"
             android:inputType="textPassword"
             android:text="" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -56,6 +68,10 @@
                 android:shadowRadius="3"
                 android:shadowDy="4"/>
 
+            <Space
+                android:layout_width="8dp"
+                android:layout_height="wrap_content" />
+
             <Button
                 android:id="@+id/registro"
                 android:layout_width="wrap_content"
@@ -65,9 +81,14 @@
                 android:shadowColor="@color/black"
                 android:shadowDx="4"
                 android:shadowRadius="3"
-                android:shadowDy="4"/>
+                android:shadowDy="4"
+                />
 
         </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
 
         <CheckBox
             android:id="@+id/checkterapeuta"
