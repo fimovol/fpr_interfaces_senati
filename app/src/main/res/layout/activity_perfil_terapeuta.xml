@@ -9,38 +9,60 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="59dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:shadowColor="@color/design_default_color_primary_dark"
+            android:shadowDx="4"
+            android:shadowDy="4"
+            android:shadowRadius="3"
             android:text="sin nombre"
-            android:textSize="30dp"
-            android:textColor="#000"/>
+            android:textColor="#000"
+            android:textSize="30dp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:shadowColor="@color/black"
+            android:shadowDx="4"
+            android:shadowDy="4"
+            android:shadowRadius="3"
             android:text="habilidades"
-            android:textSize="25dp"
-            android:textColor="#000"/>
+            android:textColor="#000"
+            android:textSize="25dp" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
             android:text="descripcion bien resumida de las habilidades del terapeuta"
-            android:textSize="20dp"
-            android:textColor="#000"/>
+            android:textColor="#000"
+            android:textSize="20dp" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:shadowColor="@color/black"
+            android:shadowDx="4"
+            android:shadowDy="4"
+            android:shadowRadius="3"
             android:text="antecedentes"
-            android:textSize="25dp"
-            android:textColor="#000"/>
+            android:textColor="#000"
+            android:textSize="25dp" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="descripcion bien resumida de los antecedentes del terapeuta"
-            android:textSize="20dp"
-            android:textColor="#000"/>
+            android:textColor="#000"
+            android:textSize="20dp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

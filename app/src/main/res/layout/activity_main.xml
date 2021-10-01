@@ -9,67 +9,77 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="usuario"
             android:textSize="30dp" />
 
         <EditText
             android:id="@+id/usuario"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="usuario"
             android:inputType="textEmailAddress"
             android:text="" />
 
         <TextView
             android:id="@+id/textView1"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="contraseña"
-            android:textSize="30dp"/>
+            android:textSize="30dp" />
+
         <EditText
             android:id="@+id/contrasena"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="contraseña"
             android:inputType="textPassword"
             android:text="" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/logeo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:onClick="logeo"
-                android:text="logeate" />
+                android:text="logeate"
+                android:shadowColor="@color/black"
+                android:shadowDx="4"
+                android:shadowRadius="3"
+                android:shadowDy="4"/>
 
             <Button
                 android:id="@+id/registro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:onClick="registro"
-                android:text="registrate" />
-
-            <CheckBox
-                android:id="@+id/checkterapeuta"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="eres terapeuta?"
-                />
+                android:text="registrate"
+                android:shadowColor="@color/black"
+                android:shadowDx="4"
+                android:shadowRadius="3"
+                android:shadowDy="4"/>
 
         </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/checkterapeuta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="eres terapeuta?"
+            />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

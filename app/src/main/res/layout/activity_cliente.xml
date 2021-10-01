@@ -8,9 +8,9 @@
 
     <LinearLayout
 
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="12dp"
+        android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,94 +19,92 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
             android:layout_marginBottom="30dp"
+            android:gravity="center"
             android:orientation="horizontal">
 
-            <androidx.cardview.widget.CardView
+            <LinearLayout
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center"
                 android:layout_marginRight="30dp"
-                app:cardBackgroundColor="#6266D6"
-                app:cardCornerRadius="30dp">
+                android:gravity="center"
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="esteban"
-                    android:textSize="20dp"
-                    android:translationX="12dp"
-                    android:translationY="12dp" />
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="hola que tal las bienbenido a las terapias"
-                    android:textSize="11dp"
-                    android:translationX="12dp"
-                    android:translationY="35dp" />
+                    android:textColor="@color/black"
+                    android:textSize="13dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="$110"
-                    android:textSize="11dp"
-                    android:translationX="12dp"
-                    android:translationY="75dp" />
+                    android:textColor="@color/black"
+                    android:textSize="17dp" />
 
                 <Button
-                    android:layout_width="94dp"
-                    android:layout_height="43dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:onClick="verperfilterapeuta"
                     android:text="perfil terapeuta"
                     android:textSize="10dp"
-                    android:translationX="12dp"
-                    android:translationY="99dp" />
+                    android:shadowColor="@color/black"
+                    android:shadowDx="4"
+                    android:shadowRadius="3"
+                    android:shadowDy="4"/>
 
-            </androidx.cardview.widget.CardView>
+            </LinearLayout>
 
-            <androidx.cardview.widget.CardView
+            <LinearLayout
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center"
-                app:cardBackgroundColor="#6266D6"
-                app:cardCornerRadius="30dp">
+                android:gravity="center"
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="francisco"
-                    android:textSize="20dp"
-                    android:translationX="12dp"
-                    android:translationY="12dp" />
+                    android:text="esteban"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="hola que tal las bienbenido a las terapias"
-                    android:textSize="11dp"
-                    android:translationX="12dp"
-                    android:translationY="35dp" />
+                    android:textColor="@color/black"
+                    android:textSize="13dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="$100"
-                    android:textSize="11dp"
-                    android:translationX="12dp"
-                    android:translationY="75dp" />
+                    android:text="$110"
+                    android:textColor="@color/black"
+                    android:textSize="17dp" />
 
                 <Button
-                    android:layout_width="94dp"
-                    android:layout_height="43dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:onClick="verperfilterapeuta"
                     android:text="perfil terapeuta"
                     android:textSize="10dp"
-                    android:translationX="12dp"
-                    android:translationY="99dp" />
+                    android:shadowColor="@color/black"
+                    android:shadowDx="4"
+                    android:shadowRadius="3"
+                    android:shadowDy="4"/>
 
-            </androidx.cardview.widget.CardView>
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
@@ -115,90 +113,88 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <androidx.cardview.widget.CardView
+            <LinearLayout
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center"
                 android:layout_marginRight="30dp"
-                app:cardBackgroundColor="#6266D6"
-                app:cardCornerRadius="30dp">
+                android:gravity="center"
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="veronica"
-                    android:textSize="20dp"
-                    android:translationX="12dp"
-                    android:translationY="12dp" />
+                    android:text="esteban"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="hola que tal las bienbenido a las terapias"
-                    android:textSize="11dp"
-                    android:translationX="12dp"
-                    android:translationY="35dp" />
+                    android:textColor="@color/black"
+                    android:textSize="13dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="$125"
-                    android:textSize="11dp"
-                    android:translationX="12dp"
-                    android:translationY="75dp" />
+                    android:text="$110"
+                    android:textColor="@color/black"
+                    android:textSize="17dp" />
 
                 <Button
-                    android:layout_width="94dp"
-                    android:layout_height="43dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:onClick="verperfilterapeuta"
                     android:text="perfil terapeuta"
                     android:textSize="10dp"
-                    android:translationX="12dp"
-                    android:translationY="99dp" />
+                    android:shadowColor="@color/black"
+                    android:shadowDx="4"
+                    android:shadowRadius="3"
+                    android:shadowDy="4"/>
 
-            </androidx.cardview.widget.CardView>
+            </LinearLayout>
 
-            <androidx.cardview.widget.CardView
+            <LinearLayout
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center"
-                app:cardBackgroundColor="#6266D6"
-                app:cardCornerRadius="30dp">
+                android:gravity="center"
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="carlos"
-                    android:textSize="20dp"
-                    android:translationX="12dp"
-                    android:translationY="12dp" />
+                    android:text="esteban"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="hola que tal las bienbenido a las terapias"
-                    android:textSize="11dp"
-                    android:translationX="12dp"
-                    android:translationY="35dp" />
+                    android:textColor="@color/black"
+                    android:textSize="13dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="$120"
-                    android:textSize="11dp"
-                    android:translationX="12dp"
-                    android:translationY="75dp" />
+                    android:text="$110"
+                    android:textColor="@color/black"
+                    android:textSize="17dp" />
 
                 <Button
-                    android:layout_width="94dp"
-                    android:layout_height="43dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:onClick="verperfilterapeuta"
                     android:text="perfil terapeuta"
                     android:textSize="10dp"
-                    android:translationX="12dp"
-                    android:translationY="99dp" />
+                    android:shadowColor="@color/black"
+                    android:shadowDx="4"
+                    android:shadowRadius="3"
+                    android:shadowDy="4"/>
 
-            </androidx.cardview.widget.CardView>
+            </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>

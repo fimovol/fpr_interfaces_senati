@@ -9,51 +9,66 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="87dp"
+        tools:layout_editor_absoluteY="49dp">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="usuario"
             android:textSize="30dp" />
+
         <EditText
             android:id="@+id/usuarioregitro"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="usuario"
             android:inputType="textEmailAddress"
             android:text="" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="contraseña"
-            android:textSize="30dp"/>
+            android:textSize="30dp" />
+
         <EditText
             android:id="@+id/contrasenaregistro"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="contraseña"
             android:inputType="textPassword"
             android:text="" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="repite contraseña"
-            android:textSize="30dp"/>
+            android:textSize="30dp" />
+
         <EditText
             android:id="@+id/contrasenaregistro2"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="repite contraseña"
             android:inputType="textPassword"
             android:text="" />
 
         <Button
             android:id="@+id/button"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="registrate"
             android:onClick="registrateusuario"
-            />
+            android:text="registrate"
+            android:shadowColor="@color/black"
+            android:shadowDx="4"
+            android:shadowRadius="3"
+            android:shadowDy="4"/>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

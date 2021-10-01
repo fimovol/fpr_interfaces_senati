@@ -9,65 +9,72 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
         android:orientation="vertical">
 
         <TextView
 
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="editar servicio"
-            android:textSize="30dp"
-            android:textColor="#000"/>
+            android:textColor="#000"
+            android:textSize="30dp" />
 
         <TextView
-            android:textColor="#000"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="nombre" />
+            android:text="nombre"
+            android:textColor="#000" />
 
         <EditText
             android:id="@+id/editservicenombre"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="nombre"
             android:inputType="textPersonName"
             android:text="" />
 
         <TextView
 
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="descripcion"
-            android:textColor="#000"/>
+            android:textColor="#000" />
 
         <EditText
             android:id="@+id/editservisdescrip"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="descripción"
             android:inputType="textPersonName"
             android:text="" />
 
         <TextView
 
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="precio"
-            android:textColor="#000"/>
+            android:textColor="#000" />
 
         <EditText
             android:id="@+id/editserviceprecio"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="precio"
             android:inputType="number"
-            android:text=""
-            />
+            android:text="" />
 
         <Button
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="editservice"
             android:text="editar servicio"
-            android:onClick="editservice"/>
+            android:shadowColor="@color/black"
+            android:shadowDx="4"
+            android:shadowRadius="3"
+            android:shadowDy="4"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
