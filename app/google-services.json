@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "159993192629",
+    "project_id": "senati-9926e",
+    "storage_bucket": "senati-9926e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:159993192629:android:a56616a5ba41b370e19efc",
+        "android_client_info": {
+          "package_name": "com.example.fpr_interfaces"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "159993192629-l2joogcd5qg4ec5thms5iimd8o8tfjju.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD69T4hml0zi1scDAD98LDH0esxhylbTto"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "159993192629-l2joogcd5qg4ec5thms5iimd8o8tfjju.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
