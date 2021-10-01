@@ -218,5 +218,12 @@
             android:shadowDx="4"
             android:shadowRadius="3"
             android:shadowDy="4"/>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:text="TextView" />
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
