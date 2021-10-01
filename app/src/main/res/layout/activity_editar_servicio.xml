@@ -20,11 +20,6 @@
             android:textColor="#000"
             android:textSize="30dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="nombre"
-            android:textColor="#000" />
 
         <EditText
             android:id="@+id/editservicenombre"
@@ -35,12 +30,6 @@
             android:inputType="textPersonName"
             android:text="" />
 
-        <TextView
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="descripcion"
-            android:textColor="#000" />
 
         <EditText
             android:id="@+id/editservisdescrip"
@@ -51,12 +40,6 @@
             android:inputType="textPersonName"
             android:text="" />
 
-        <TextView
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="precio"
-            android:textColor="#000" />
 
         <EditText
             android:id="@+id/editserviceprecio"

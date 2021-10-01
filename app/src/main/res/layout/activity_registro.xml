@@ -15,10 +15,11 @@
         tools:layout_editor_absoluteY="49dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="usuario"
-            android:textSize="30dp" />
+            android:text="registrate ahora"
+            android:textSize="30dp"
+            android:textColor="@color/black"/>
 
         <EditText
             android:id="@+id/usuarioregitro"
@@ -29,11 +30,7 @@
             android:inputType="textEmailAddress"
             android:text="" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="contraseña"
-            android:textSize="30dp" />
+
 
         <EditText
             android:id="@+id/contrasenaregistro"
@@ -44,11 +41,7 @@
             android:inputType="textPassword"
             android:text="" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="repite contraseña"
-            android:textSize="30dp" />
+
 
         <EditText
             android:id="@+id/contrasenaregistro2"

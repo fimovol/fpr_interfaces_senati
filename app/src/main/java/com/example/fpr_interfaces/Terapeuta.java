@@ -17,4 +17,9 @@ public class Terapeuta extends AppCompatActivity {
         Intent editar = new Intent(Terapeuta.this,EditarServicio.class);
         startActivity(editar);
     }
+
+    public void deslogeate (View v){
+        Intent deslogeate = new Intent(Terapeuta.this,MainActivity.class);
+        startActivity(deslogeate);
+    }
 }

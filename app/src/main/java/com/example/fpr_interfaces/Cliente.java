@@ -19,4 +19,14 @@ public class Cliente extends AppCompatActivity {
         Intent PerfilTerapeuta = new Intent(Cliente.this,PerfilTerapeuta.class);
         startActivity(PerfilTerapeuta);
     }
+
+    public void deslogeate(View v){
+        Intent deslogeate = new Intent(Cliente.this,MainActivity.class);
+        startActivity(deslogeate);
+    }
+
+    public void elegirTerapia(View v){
+        Intent elegirTerapia = new Intent(Cliente.this,elegirTerapia.class);
+        startActivity(elegirTerapia);
+    }
 }

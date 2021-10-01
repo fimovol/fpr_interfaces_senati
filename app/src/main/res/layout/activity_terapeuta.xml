@@ -106,4 +106,20 @@
         </LinearLayout>
 
     </LinearLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:onClick="deslogeate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="20dp"
+            android:text="salir de mi cuenta"
+            android:shadowColor="@color/black"
+            android:shadowDx="4"
+            android:shadowRadius="3"
+            android:shadowDy="4"/>
+    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

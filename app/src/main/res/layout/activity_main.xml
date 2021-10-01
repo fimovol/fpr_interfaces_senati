@@ -16,8 +16,9 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="usuario"
-            android:textSize="30dp" />
+            android:text="bienvenido"
+            android:textSize="30dp"
+            android:textColor="@color/black"/>
 
         <EditText
             android:id="@+id/usuario"
@@ -28,12 +29,6 @@
             android:inputType="textEmailAddress"
             android:text="" />
 
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="contraseña"
-            android:textSize="30dp" />
 
         <EditText
             android:id="@+id/contrasena"

@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PerfilTerapeuta">
+    tools:context=".elegirTerapia">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="-16dp"
-        tools:layout_editor_absoluteY="59dp">
+        tools:layout_editor_absoluteX="31dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -22,7 +22,7 @@
             android:shadowDx="4"
             android:shadowDy="4"
             android:shadowRadius="3"
-            android:text="Esteban"
+            android:text="felicidades"
             android:textColor="#000"
             android:textSize="30dp" />
 
@@ -34,7 +34,7 @@
             android:shadowDx="4"
             android:shadowDy="4"
             android:shadowRadius="3"
-            android:text="habilidades"
+            android:text="generaste una cita"
             android:textColor="#000"
             android:textSize="25dp" />
 
@@ -42,7 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:text="descripcion bien resumida de las habilidades del terapeuta"
+            android:text="la hora de la cita sera 13:00 el dia 2 de octubre"
             android:textColor="#000"
             android:textSize="20dp" />
 
@@ -54,14 +54,14 @@
             android:shadowDx="4"
             android:shadowDy="4"
             android:shadowRadius="3"
-            android:text="antecedentes"
+            android:text="terapeuta"
             android:textColor="#000"
             android:textSize="25dp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="descripcion bien resumida de los antecedentes del terapeuta"
+            android:text="esteban sera tu terapeuta"
             android:textColor="#000"
             android:textSize="20dp" />
     </LinearLayout>
