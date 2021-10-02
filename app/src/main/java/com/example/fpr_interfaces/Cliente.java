@@ -1,15 +1,15 @@
 package com.example.fpr_interfaces;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toolbar;
 
 import com.google.firebase.auth.FirebaseAuth;
+
 
 public class Cliente extends AppCompatActivity {
     Bundle extras;
@@ -43,5 +43,7 @@ public class Cliente extends AppCompatActivity {
         Intent elegirTerapia = new Intent(Cliente.this,elegirTerapia.class);
         elegirTerapia.putExtra("email",newString);
         startActivity(elegirTerapia);
+
     }
+
 }
