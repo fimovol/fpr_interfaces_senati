@@ -12,13 +12,14 @@ import android.widget.Toolbar;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Cliente extends AppCompatActivity {
-    Toolbar mActionBarToolbar;
+    Bundle extras;
+    String newString;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cliente);
-        String newString;
-        Bundle extras = getIntent().getExtras();
+
+        extras = getIntent().getExtras();
         if(extras == null) {
             newString= null;
         } else {
@@ -28,6 +29,7 @@ public class Cliente extends AppCompatActivity {
     }
     public void verperfilterapeuta(View v){
         Intent PerfilTerapeuta = new Intent(Cliente.this,PerfilTerapeuta.class);
+        PerfilTerapeuta.putExtra("email",newString);
         startActivity(PerfilTerapeuta);
     }
 
@@ -39,6 +41,7 @@ public class Cliente extends AppCompatActivity {
 
     public void elegirTerapia(View v){
         Intent elegirTerapia = new Intent(Cliente.this,elegirTerapia.class);
+        elegirTerapia.putExtra("email",newString);
         startActivity(elegirTerapia);
     }
 }
