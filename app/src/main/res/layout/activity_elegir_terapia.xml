@@ -10,59 +10,65 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
+
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="31dp"
+        tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:shadowColor="@color/design_default_color_primary_dark"
-            android:shadowDx="4"
-            android:shadowDy="4"
-            android:shadowRadius="3"
+            android:fontFamily="sans-serif"
             android:text="felicidades"
             android:textColor="#000"
-            android:textSize="30dp" />
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="13dp" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:shadowColor="@color/black"
-            android:shadowDx="4"
-            android:shadowDy="4"
-            android:shadowRadius="3"
             android:text="generaste una cita"
             android:textColor="#000"
-            android:textSize="25dp" />
+            android:textSize="16dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:maxWidth="150dp"
             android:text="la hora de la cita sera 13:00 el dia 2 de octubre"
             android:textColor="#000"
-            android:textSize="20dp" />
+            android:textSize="13dp"
+            android:textStyle="italic" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="13dp" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:shadowColor="@color/black"
-            android:shadowDx="4"
-            android:shadowDy="4"
-            android:shadowRadius="3"
             android:text="terapeuta"
             android:textColor="#000"
-            android:textSize="25dp" />
+            android:textSize="16dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="esteban sera tu terapeuta"
             android:textColor="#000"
-            android:textSize="20dp" />
+            android:textSize="13dp"
+            android:textStyle="italic" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
