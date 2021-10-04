@@ -3,16 +3,25 @@ package com.example.fpr_interfaces;
 import java.io.Serializable;
 
 public class CantanteModelo implements Serializable {
-    private String cantante,nacionalidad;
+    private String cantante,nacionalidad,precio;
     private int fotocantante;
 
     public CantanteModelo() {
     }
 
-    public CantanteModelo(String cantante, String nacionalidad, int fotocantante) {
+
+    public CantanteModelo(String cantante, String nacionalidad, int fotocantante, String precio) {
         this.cantante = cantante;
         this.nacionalidad = nacionalidad;
         this.fotocantante = fotocantante;
+        this.precio = precio;
+    }
+    public String getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(String precio) {
+        this.precio = precio;
     }
 
     public String getCantante() {

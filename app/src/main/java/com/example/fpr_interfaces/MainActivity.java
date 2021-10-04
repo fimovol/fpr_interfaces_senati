@@ -42,9 +42,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void logeo(View v){
-        Intent terapeuta = new Intent(MainActivity.this,pruebabuscador.class);
-        startActivity(terapeuta);
-        /*String usuari = usuario.getText().toString();
+
+
+        String usuari = usuario.getText().toString();
         String contra = contrasena.getText().toString();
         if(!usuari.isEmpty() &&
                 !contra.isEmpty()){
@@ -59,15 +59,15 @@ public class MainActivity extends AppCompatActivity {
                                     terapeuta.putExtra("email",task.getResult().getUser().getEmail());
                                     startActivity(terapeuta);
                                 }else{
-                                    Intent cliente = new Intent(MainActivity.this,Cliente.class);
-                                    cliente.putExtra("email",task.getResult().getUser().getEmail());
-                                    startActivity(cliente);
+                                    Intent terapeuta = new Intent(MainActivity.this,pruebabuscador.class);
+                                    terapeuta.putExtra("email",task.getResult().getUser().getEmail());
+                                    startActivity(terapeuta);
                                 }
                             } else {
                                 Toast.makeText(MainActivity.this, "error al logearse", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
-        }*/
+        }
     }
 }

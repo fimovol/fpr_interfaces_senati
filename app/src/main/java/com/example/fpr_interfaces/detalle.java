@@ -10,12 +10,26 @@ public class detalle extends AppCompatActivity {
     private ImageView imgItemDetalle;
     private TextView txt1,txt2;
     private CantanteModelo itemDetalle;
+
+    Bundle extras;
+    String newString;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle);
         initialViews();
         initialValues();
+        extras = getIntent().getExtras();
+        if(extras == null) {
+            newString= null;
+            System.out.println("nada en el titulo :V");
+        } else {
+            newString= extras.getString("titulo");
+            setTitle(newString);
+        }
+    }
+    public void anadirtitulo(){
+
     }
     public void initialViews(){
         imgItemDetalle= findViewById(R.id.imageView);
