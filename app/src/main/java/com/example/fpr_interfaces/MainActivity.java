@@ -42,7 +42,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void logeo(View v){
-        String usuari = usuario.getText().toString();
+        Intent terapeuta = new Intent(MainActivity.this,pruebabuscador.class);
+        startActivity(terapeuta);
+        /*String usuari = usuario.getText().toString();
         String contra = contrasena.getText().toString();
         if(!usuari.isEmpty() &&
                 !contra.isEmpty()){
@@ -66,6 +68,6 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }
                     });
-        }
+        }*/
     }
 }
