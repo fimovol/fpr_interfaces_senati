@@ -40,9 +40,9 @@ public class Registro extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    Intent cliente = new Intent(Registro.this,Cliente.class);
-                                    cliente.putExtra("email",task.getResult().getUser().getEmail());
-                                    startActivity(cliente);
+                                    Intent pruebabuscador = new Intent(Registro.this,pruebabuscador.class);
+                                    pruebabuscador.putExtra("email",task.getResult().getUser().getEmail());
+                                    startActivity(pruebabuscador);
                                 } else {
                                     Toast.makeText(Registro.this,
                                             "error al crear tu usuario",

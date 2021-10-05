@@ -228,16 +228,15 @@
         >
 
         <Button
-            android:onClick="deslogeate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"
             android:layout_marginBottom="20dp"
-            android:text="salir de mi cuenta"
+            android:onClick="deslogeate"
             android:shadowColor="@color/black"
             android:shadowDx="4"
-            android:shadowRadius="3"
             android:shadowDy="4"
-            />
+            android:shadowRadius="3"
+            android:text="👋" />
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
