@@ -9,13 +9,14 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.fpr_interfaces.db.DbClientes;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Registro extends AppCompatActivity {
-    EditText usuarioregitro,contrasenaregistro,contrasenaregistro2;
+    EditText usuarioregitro,contrasenaregistro,contrasenaregistro2,saldodecleente,nombrecliente;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,11 +24,16 @@ public class Registro extends AppCompatActivity {
         usuarioregitro = findViewById(R.id.usuarioregitro);
         contrasenaregistro = findViewById(R.id.contrasenaregistro);
         contrasenaregistro2 = findViewById(R.id.contrasenaregistro2);
+        saldodecleente = findViewById(R.id.saldodecleente);
+        nombrecliente = findViewById(R.id.nombrecliente);
     }
     public void registrateusuario(View v){
         String uduari = usuarioregitro.getText().toString();
         String contra = contrasenaregistro.getText().toString();
         String contra2 = contrasenaregistro2.getText().toString();
+        String saldo = saldodecleente.getText().toString();
+        String nombre = nombrecliente.getText().toString();
+
         String cadena1 = new String(contra);
         String cadena2 = new String(contra2);
         if(cadena1.equals(cadena2)){
@@ -42,6 +48,7 @@ public class Registro extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     Intent pruebabuscador = new Intent(Registro.this,pruebabuscador.class);
                                     pruebabuscador.putExtra("email",task.getResult().getUser().getEmail());
+                                    guardarEnBasededatos(nombre,contra,saldo,uduari);
                                     startActivity(pruebabuscador);
                                 } else {
                                     Toast.makeText(Registro.this,
@@ -63,5 +70,10 @@ public class Registro extends AppCompatActivity {
 
         //Intent registrateusuario = new Intent(Registro.this,MainActivity.class);
         //startActivity(registrateusuario);
+    }
+    public void guardarEnBasededatos(String nombre,String contrasena,String saldo,String usuario){
+        DbClientes dbcontactos = new DbClientes(this);
+        int saldoint =Integer.parseInt(saldo);
+        long id=dbcontactos.insertarClientes(nombre,contrasena,saldoint,usuario);
     }
 }

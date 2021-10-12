@@ -17,7 +17,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+
 
 public class MainActivity extends AppCompatActivity {
     Button logeo,registro;
@@ -42,8 +42,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void logeo(View v){
-
-
         String usuari = usuario.getText().toString();
         String contra = contrasena.getText().toString();
         if(!usuari.isEmpty() &&

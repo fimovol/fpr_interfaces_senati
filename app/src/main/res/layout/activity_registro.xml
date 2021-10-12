@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Registro">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -13,14 +12,12 @@
         android:orientation="vertical"
         tools:layout_editor_absoluteX="87dp"
         tools:layout_editor_absoluteY="49dp">
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="registrate ahora"
             android:textSize="30dp"
             android:textColor="@color/black"/>
-
         <EditText
             android:id="@+id/usuarioregitro"
             android:layout_width="wrap_content"
@@ -29,9 +26,6 @@
             android:hint="usuario"
             android:inputType="textEmailAddress"
             android:text="" />
-
-
-
         <EditText
             android:id="@+id/contrasenaregistro"
             android:layout_width="wrap_content"
@@ -40,9 +34,6 @@
             android:hint="contraseña"
             android:inputType="textPassword"
             android:text="" />
-
-
-
         <EditText
             android:id="@+id/contrasenaregistro2"
             android:layout_width="wrap_content"
@@ -51,7 +42,22 @@
             android:hint="repite contraseña"
             android:inputType="textPassword"
             android:text="" />
-
+        <EditText
+            android:id="@+id/saldodecleente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="saldo"
+            android:inputType="number"
+            android:text="" />
+        <EditText
+            android:id="@+id/nombrecliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="nombre"
+            android:inputType="text"
+            android:text="" />
         <Button
             android:id="@+id/button"
             android:layout_width="wrap_content"
@@ -62,6 +68,5 @@
             android:shadowDx="4"
             android:shadowRadius="3"
             android:shadowDy="4"/>
-
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,16 +5,25 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.widget.SearchView;
 
+import com.example.fpr_interfaces.db.DbClientes;
+import com.example.fpr_interfaces.db.Dbhelper2;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class pruebabuscador extends AppCompatActivity implements SearchView.OnQueryTextListener {
     private RecyclerView recyclerViewCantante;
@@ -22,6 +31,8 @@ public class pruebabuscador extends AppCompatActivity implements SearchView.OnQu
     private SearchView svSearch;
     Bundle extras;
     String newString;
+
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +56,18 @@ public class pruebabuscador extends AppCompatActivity implements SearchView.OnQu
         }
     }
     public void deslogelearse(View vista){
+
+        /*
+        esto crea la base de datos
+        Dbhelper2 dbhelper2 = new Dbhelper2(pruebabuscador.this);
+        SQLiteDatabase db = dbhelper2.getWritableDatabase();
+        if(db != null){
+            Toast.makeText(pruebabuscador.this,"BASE DE DATOS CREADA",Toast.LENGTH_LONG).show();
+        }else{
+            Toast.makeText(pruebabuscador.this,"error",Toast.LENGTH_LONG).show();
+        }
+        */
+        System.out.println(newString);
         FirebaseAuth.getInstance().signOut();
         Intent deslogeate = new Intent(pruebabuscador.this,MainActivity.class);
         startActivity(deslogeate);
@@ -74,6 +97,7 @@ public class pruebabuscador extends AppCompatActivity implements SearchView.OnQu
         return  cantante;
     }
     public void comprarterapia(View vista){
+        System.out.println("ME LLAMO JAVIER"+vista);
         Toast.makeText(pruebabuscador.this, "Felicidades Compraste tu cita", Toast.LENGTH_LONG).show();
     }
     @Override
