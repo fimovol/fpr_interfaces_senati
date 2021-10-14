@@ -41,6 +41,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(terapeuta);
 
     }
+    public void pruebaclientes(View v){
+        Intent terapeuta = new Intent(MainActivity.this,MostrarClientePrueba.class);
+        startActivity(terapeuta);
+    }
     public void logeo(View v){
         String usuari = usuario.getText().toString();
         String contra = contrasena.getText().toString();
