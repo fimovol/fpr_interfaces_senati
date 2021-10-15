@@ -110,4 +110,9 @@ public class pruebabuscador extends AppCompatActivity implements SearchView.OnQu
         adaptadorCantante.filter(newText);
         return false;
     }
+    public void gestionatucuenta(View v){
+        Intent gestioncliente = new Intent(pruebabuscador.this,MostrarClientePrueba.class);
+        startActivity(gestioncliente);
+    }
+
 }
