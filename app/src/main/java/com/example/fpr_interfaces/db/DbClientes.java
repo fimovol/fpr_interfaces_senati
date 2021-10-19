@@ -20,6 +20,44 @@ public class DbClientes extends Dbhelper2{
         super(context);
         this.context = context;
     }
+    public boolean comprobarsiexisteelterapeuta(String Usuario_terapeuta){
+        Dbhelper2 dbhelper = new Dbhelper2(context);
+        SQLiteDatabase db = dbhelper.getWritableDatabase();
+        Cursor cursor = null;
+
+        cursor = db.rawQuery("select * from tb_terapeutas where usuario = '"+Usuario_terapeuta+"'",null);
+
+        return cursor.moveToFirst();
+    }
+    public void agregartablaterapias(int comprado,String descripcion,String precio,int id_clientefk,int id_terapeutafk,String nombre){
+        Dbhelper2 dbhelper = new Dbhelper2(context);
+        SQLiteDatabase db = dbhelper.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put("comprado",comprado);
+        values.put("descripcion",descripcion);
+        values.put("precio",precio);
+        values.put("id_clientefk",id_clientefk);
+        values.put("id_terapeutafk",id_terapeutafk);
+        values.put("nombre",nombre);
+
+        db.insert("terapias",null,values);
+    }
+    public void agregaratablaterapeuta(String nombre,String contra,String descrip,String foto,String saldo,String usuarios){
+        Dbhelper2 dbhelper = new Dbhelper2(context);
+        SQLiteDatabase db = dbhelper.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put("nombre",nombre);
+        values.put("contrasena",contra);
+        values.put("descripcion",descrip);
+        values.put("foto",foto);
+        values.put("saldo",saldo);
+        values.put("usuario",usuarios);
+
+        db.insert("tb_terapeutas",null,values);
+
+    }
     public long insertarClientes(String nombre,String contrasena,int saldo,String usuario){
         long id = 0;
         try{
