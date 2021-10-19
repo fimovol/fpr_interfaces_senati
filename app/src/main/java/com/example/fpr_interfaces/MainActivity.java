@@ -13,6 +13,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.fpr_interfaces.db.DbClientes;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -54,6 +55,15 @@ public class MainActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 if(checkterapeuta.isChecked()){
+                                    DbClientes dbclientes = new DbClientes(MainActivity.this);
+                                    boolean respuesta = dbclientes.comprobarsiexisteelterapeuta(usuari);
+                                    if(!respuesta){
+                                        System.out.println("si NO existe ningun registro con ese idi que pasas co par");
+                                        dbclientes.agregaratablaterapeuta("nombre",contra,"","","",usuari);
+                                    }else{
+                                        System.out.println("si existe un id que pasa en parametro");
+                                    }
+
                                     Intent terapeuta = new Intent(MainActivity.this,Terapeuta.class);
                                     terapeuta.putExtra("email",task.getResult().getUser().getEmail());
                                     startActivity(terapeuta);
