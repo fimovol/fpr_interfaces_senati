@@ -1,9 +1,6 @@
 package com.example.fpr_interfaces;
 
 import android.content.Intent;
-import android.net.Uri;
-import android.os.Build;
-import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,10 +25,10 @@ public class ReciclerViewAdaptador extends RecyclerView.Adapter<ReciclerViewAdap
 
         public ViewHolder(View itemView) {
             super(itemView);
-            cantante = (TextView) itemView.findViewById(R.id.id_tvcantante);
-            nacionalidad = (TextView) itemView.findViewById(R.id.id_tvnacionalidad);
+            cantante = (TextView) itemView.findViewById(R.id.nombreterapiaplantilla);
+            nacionalidad = (TextView) itemView.findViewById(R.id.descipterapiaplantilla);
             fotocantante = (ImageView) itemView.findViewById(R.id.imgCantante);
-            precio = (TextView) itemView.findViewById(R.id.id_tvprecio);
+            precio = (TextView) itemView.findViewById(R.id.precioterapiaplantilla);
         }
     }
     public List<CantanteModelo> cantanteLista;

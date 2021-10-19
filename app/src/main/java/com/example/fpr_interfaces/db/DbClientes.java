@@ -111,7 +111,7 @@ public class DbClientes extends Dbhelper2{
         Cursor cursor = null;
         int id_terapeutafk=encontrarIdDelTerapeutaConUsuario(terapeuta);
         cursor = db.rawQuery(
-                "select nombre,precio,descripcion from terapias WHERE id_terapeutafk = ?;"
+                "select nombre,precio,descripcion,id_terapia  from terapias WHERE id_terapeutafk = ?;"
                 ,new String [] {String.valueOf(id_terapeutafk)});
 
         if(cursor.moveToFirst()){
@@ -120,6 +120,7 @@ public class DbClientes extends Dbhelper2{
                 terapia.setNombre(cursor.getString(0));
                 terapia.setPrecio(cursor.getString(1));
                 terapia.setDescripcion(cursor.getString(2));
+                terapia.setId_terapia(cursor.getString(3));
 
                 lista.add(terapia);
             }while(cursor.moveToNext());
@@ -141,5 +142,18 @@ public class DbClientes extends Dbhelper2{
             return identero;
         }
         return 0;
+    }
+    public void cambiarTablaTerapiasEditar(String nombre,String descrip,String preciio,String id){
+        Dbhelper2 dbhelper = new Dbhelper2(context);
+        SQLiteDatabase db = dbhelper.getWritableDatabase();
+
+        Cursor cursor = null;
+        cursor =db.rawQuery(
+                "UPDATE terapias SET descripcion = ?, precio= ?, nombre= ? WHERE id_terapia = ?;"
+                ,new String [] {String.valueOf(descrip)
+                        ,String.valueOf(preciio)
+                        ,String.valueOf(nombre)
+                        ,String.valueOf(id)});
+        cursor.getCount();
     }
 }

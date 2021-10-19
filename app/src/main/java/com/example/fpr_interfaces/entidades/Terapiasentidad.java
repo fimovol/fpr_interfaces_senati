@@ -4,6 +4,15 @@ public class Terapiasentidad {
     private String nombre;
     private String precio;
     private String descripcion;
+    private String id_terapia;
+
+    public String getId_terapia() {
+        return id_terapia;
+    }
+
+    public void setId_terapia(String id_terapia) {
+        this.id_terapia = id_terapia;
+    }
 
     public String getNombre() {
         return nombre;

@@ -5,10 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
+
+import com.example.fpr_interfaces.db.DbClientes;
 
 public class EditarServicio extends AppCompatActivity {
     Bundle extras;
-    String newString;
+    String newString,id_terapia;
+    EditText editserviceprecio,editservisdescrip,editservicenombre;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,13 +21,29 @@ public class EditarServicio extends AppCompatActivity {
         extras = getIntent().getExtras();
         if(extras == null) {
             newString= null;
+            id_terapia=null;
         } else {
             newString= extras.getString("email");
+            id_terapia= extras.getString("id_terapia");
             setTitle(newString);
         }
+
+        editservicenombre= findViewById(R.id.editservicenombre);
+        editservisdescrip= findViewById(R.id.editservisdescrip);
+        editserviceprecio= findViewById(R.id.editserviceprecio);
+
+
     }
     public void editservice(View v ){
+        String nombre=editservicenombre.getText().toString();
+        String descrip=editservisdescrip.getText().toString();
+        String preciio=editserviceprecio.getText().toString();
+        DbClientes db = new DbClientes(this);
+        db.cambiarTablaTerapiasEditar(nombre,descrip,preciio,id_terapia);
+        //metodo para cambiar la tabla
+        //cambiarTablaTerapiasEditar
         Intent editar = new Intent(EditarServicio.this,Terapeuta.class);
+        editar.putExtra("email",newString);
         startActivity(editar);
     }
 }
