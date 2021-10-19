@@ -108,18 +108,30 @@
     </LinearLayout>
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="35dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <Button
-            android:onClick="deslogeate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"
             android:layout_marginBottom="20dp"
-            android:text="👋"
+            android:onClick="deslogeate"
             android:shadowColor="@color/black"
             android:shadowDx="4"
+            android:shadowDy="4"
             android:shadowRadius="3"
-            android:shadowDy="4"/>
+            android:text="👋" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|left"
+            android:text="add service"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="20dp"
+            android:onClick="agregarterapia"
+            />
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

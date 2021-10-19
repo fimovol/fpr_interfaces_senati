@@ -32,4 +32,8 @@ public class Terapeuta extends AppCompatActivity {
         Intent deslogeate = new Intent(Terapeuta.this,MainActivity.class);
         startActivity(deslogeate);
     }
+    public void agregarterapia(View v){
+        Intent agregarterapia = new Intent(Terapeuta.this, com.example.fpr_interfaces.agregarterapia.class);
+        startActivity(agregarterapia);
+    }
 }
