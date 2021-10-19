@@ -34,6 +34,7 @@ public class Terapeuta extends AppCompatActivity {
     }
     public void agregarterapia(View v){
         Intent agregarterapia = new Intent(Terapeuta.this, com.example.fpr_interfaces.agregarterapia.class);
+        agregarterapia.putExtra("email",newString);
         startActivity(agregarterapia);
     }
 }

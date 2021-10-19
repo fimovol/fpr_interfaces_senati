@@ -12,6 +12,8 @@ import com.example.fpr_interfaces.db.DbClientes;
 
 public class agregarterapia extends AppCompatActivity {
     EditText editserviceprecioaddterapia,editservisdescripaddterapia,editservicenombreaddterapia;
+    Bundle extras;
+    String usuario;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +21,13 @@ public class agregarterapia extends AppCompatActivity {
         editserviceprecioaddterapia = findViewById(R.id.editserviceprecioaddterapia);
         editservisdescripaddterapia = findViewById(R.id.editservisdescripaddterapia);
         editservicenombreaddterapia = findViewById(R.id.editservicenombreaddterapia);
+        extras = getIntent().getExtras();
+        if(extras == null) {
+            usuario= null;
+        } else {
+            usuario= extras.getString("email");
+            setTitle(usuario);
+        }
     }
     public void agregarterapia(View v){
         String precio=editserviceprecioaddterapia.getText().toString();
@@ -28,8 +37,10 @@ public class agregarterapia extends AppCompatActivity {
             if(!descrip.equals("")){
                 if(!nombre.equals("")){
                     DbClientes dbclientes = new DbClientes(agregarterapia.this);
-                    dbclientes.agregartablaterapias(0,descrip,precio,0,0,nombre);
+                    int idterapeutafk=dbclientes.encontrarIdDelTerapeutaConUsuario(usuario);
+                    dbclientes.agregartablaterapias(0,descrip,precio,0,idterapeutafk,nombre);
                     Intent volver = new Intent(agregarterapia.this,Terapeuta.class);
+                    volver.putExtra("email",usuario);
                     startActivity(volver);
                 }else {
                     Toast.makeText(this, "falta nombre", Toast.LENGTH_SHORT).show();

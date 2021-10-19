@@ -101,4 +101,19 @@ public class DbClientes extends Dbhelper2{
         cursor.close();
         return listaclientes;
     }
+    public int encontrarIdDelTerapeutaConUsuario(String usuario){
+        Dbhelper2 dbhelper = new Dbhelper2(context);
+        SQLiteDatabase db = dbhelper.getWritableDatabase();
+        Cursor cursor = null;
+        cursor = db.rawQuery(
+                "select id_terapeuta from tb_terapeutas where usuario = ?"
+                ,new String [] {String.valueOf(usuario)});
+
+        if(cursor.moveToFirst()){
+            String id=cursor.getString(0);
+            int identero = Integer.parseInt(id);
+            return identero;
+        }
+        return 0;
+    }
 }
