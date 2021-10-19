@@ -1,14 +1,20 @@
 package com.example.fpr_interfaces;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.fpr_interfaces.adaptadores.ListaTerapiasPorTerapeutaAdapter;
+import com.example.fpr_interfaces.db.DbClientes;
+
 public class Terapeuta extends AppCompatActivity {
     Bundle extras;
     String newString;
+    RecyclerView recyclerTerapiasporTerapeuta;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +27,13 @@ public class Terapeuta extends AppCompatActivity {
             newString= extras.getString("email");
             setTitle(newString);
         }
+        recyclerTerapiasporTerapeuta=(RecyclerView)findViewById(R.id.recyclerTerapiasporTerapeuta);
+        recyclerTerapiasporTerapeuta.setLayoutManager(new LinearLayoutManager(this));
+        DbClientes dbclientes = new DbClientes(Terapeuta.this);
+        ListaTerapiasPorTerapeutaAdapter adaptador=new ListaTerapiasPorTerapeutaAdapter
+                (dbclientes.mostrarTerapiasPorTerapeuta(newString));
+        recyclerTerapiasporTerapeuta.setAdapter(adaptador);
+
     }
     public void editar (View v){
         Intent editar = new Intent(Terapeuta.this,EditarServicio.class);

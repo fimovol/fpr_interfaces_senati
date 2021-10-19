@@ -9,6 +9,7 @@ import androidx.annotation.Nullable;
 
 import com.example.fpr_interfaces.Cliente;
 import com.example.fpr_interfaces.entidades.Clientes;
+import com.example.fpr_interfaces.entidades.Terapiasentidad;
 
 import java.util.ArrayList;
 
@@ -100,6 +101,31 @@ public class DbClientes extends Dbhelper2{
         }
         cursor.close();
         return listaclientes;
+    }
+    public ArrayList<Terapiasentidad> mostrarTerapiasPorTerapeuta(String terapeuta){
+        Dbhelper2 dbhelper = new Dbhelper2(context);
+        SQLiteDatabase db = dbhelper.getWritableDatabase();
+
+        ArrayList<Terapiasentidad> lista = new ArrayList<>();
+        Terapiasentidad terapia = null;
+        Cursor cursor = null;
+        int id_terapeutafk=encontrarIdDelTerapeutaConUsuario(terapeuta);
+        cursor = db.rawQuery(
+                "select nombre,precio,descripcion from terapias WHERE id_terapeutafk = ?;"
+                ,new String [] {String.valueOf(id_terapeutafk)});
+
+        if(cursor.moveToFirst()){
+            do{
+                terapia = new Terapiasentidad();
+                terapia.setNombre(cursor.getString(0));
+                terapia.setPrecio(cursor.getString(1));
+                terapia.setDescripcion(cursor.getString(2));
+
+                lista.add(terapia);
+            }while(cursor.moveToNext());
+        }
+        cursor.close();
+        return lista;
     }
     public int encontrarIdDelTerapeutaConUsuario(String usuario){
         Dbhelper2 dbhelper = new Dbhelper2(context);

@@ -58,10 +58,7 @@ public class MainActivity extends AppCompatActivity {
                                     DbClientes dbclientes = new DbClientes(MainActivity.this);
                                     boolean respuesta = dbclientes.comprobarsiexisteelterapeuta(usuari);
                                     if(!respuesta){
-                                        System.out.println("si NO existe ningun registro con ese idi que pasas co par");
                                         dbclientes.agregaratablaterapeuta("nombre",contra,"","","",usuari);
-                                    }else{
-                                        System.out.println("si existe un id que pasa en parametro");
                                     }
 
                                     Intent terapeuta = new Intent(MainActivity.this,Terapeuta.class);

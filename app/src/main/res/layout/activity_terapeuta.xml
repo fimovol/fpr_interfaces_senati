@@ -1,111 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Terapeuta">
 
-    <LinearLayout
-
-        android:layout_width="0dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerTerapiasporTerapeuta"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center"
-                android:layout_marginRight="30dp"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="esteban"
-                    android:textColor="@color/black"
-                    android:textSize="20dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="hola que tal bienbenido a las terapias"
-                    android:textColor="@color/black"
-                    android:textSize="13dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="$110"
-                    android:textColor="@color/black"
-                    android:textSize="17dp" />
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:onClick="editar"
-                    android:text="editar"
-                    android:textSize="10dp"
-                    android:shadowColor="@color/black"
-                    android:shadowDx="4"
-                    android:shadowRadius="3"
-                    android:shadowDy="4"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="esteban"
-                    android:textColor="@color/black"
-                    android:textSize="20dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="hola que tal bienbenido a las terapias"
-                    android:textColor="@color/black"
-                    android:textSize="13dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="$110"
-                    android:textColor="@color/black"
-                    android:textSize="17dp" />
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:onClick="editar"
-                    android:text="editar"
-                    android:textSize="10dp"
-                    android:shadowColor="@color/black"
-                    android:shadowDx="4"
-                    android:shadowRadius="3"
-                    android:shadowDy="4"/>
-
-            </LinearLayout>
-        </LinearLayout>
-
-    </LinearLayout>
+        />
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -134,4 +39,4 @@
             android:onClick="agregarterapia"
             />
     </FrameLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
