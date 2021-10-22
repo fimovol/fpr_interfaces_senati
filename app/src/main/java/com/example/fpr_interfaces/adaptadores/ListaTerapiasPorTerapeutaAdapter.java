@@ -28,34 +28,32 @@ public class ListaTerapiasPorTerapeutaAdapter extends RecyclerView.Adapter<Lista
     public ListaTerapiasPorTerapeutaAdapter.TerapiasViweHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater
                 .from(parent.getContext())
-                .inflate(R.layout.plantellaparalasterapias,null,false);
+                .inflate(R.layout.plantellaparalasterapias,parent,false);
         return new ListaTerapiasPorTerapeutaAdapter.TerapiasViweHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ListaTerapiasPorTerapeutaAdapter.TerapiasViweHolder holder, int position) {
+        String preicoConSoles = "S/."+(listaterapias.get(position).getPrecio());
+
         holder.nombreterapiaplantilla.setText(listaterapias.get(position).getNombre());
-        holder.precioterapiaplantilla.setText(listaterapias.get(position).getPrecio());
+        holder.precioterapiaplantilla.setText(preicoConSoles);
         holder.descipterapiaplantilla.setText(listaterapias.get(position).getDescripcion());
 
+        holder.botoneditarTerapia.setOnClickListener(v -> {
+            Intent i = new Intent(holder.itemView.getContext(), EditarServicio.class);
+            i.putExtra("id_terapia",listaterapias.get(position).getId_terapia());
+            i.putExtra("getNombre",listaterapias.get(position).getNombre());
+            i.putExtra("getPrecio",listaterapias.get(position).getPrecio());
+            i.putExtra("getDescripcion",listaterapias.get(position).getDescripcion());
 
-        holder.botoneditarTerapia.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(holder.itemView.getContext(), EditarServicio.class);
-                i.putExtra("id_terapia",listaterapias.get(position).getId_terapia());
-                i.putExtra("getNombre",listaterapias.get(position).getNombre());
-                i.putExtra("getPrecio",listaterapias.get(position).getPrecio());
-                i.putExtra("getDescripcion",listaterapias.get(position).getDescripcion());
-
-                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                if (user != null) {
-                    String email = user.getEmail();
-                    i.putExtra("email",email);
-                }
-
-                holder.itemView.getContext().startActivity(i);
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            if (user != null) {
+                String email = user.getEmail();
+                i.putExtra("email",email);
             }
+
+            holder.itemView.getContext().startActivity(i);
         });
     }
 
