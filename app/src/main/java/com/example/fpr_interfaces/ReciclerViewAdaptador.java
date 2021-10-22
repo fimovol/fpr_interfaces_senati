@@ -53,20 +53,18 @@ public class ReciclerViewAdaptador extends RecyclerView.Adapter<ReciclerViewAdap
         holder.nacionalidad.setText(cantanteLista.get(position).getNacionalidad());
         holder.fotocantante.setImageResource(cantanteLista.get(position).getFotocantante());
         holder.precio.setText(cantanteLista.get(position).getPrecio());
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(holder.itemView.getContext(),detalle.class);
-                i.putExtra("contra",cantanteLista.get(position));
 
-                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                if (user != null) {
-                    String email = user.getEmail();
-                    i.putExtra("titulo",email);
-                }
+        holder.itemView.setOnClickListener(v -> {
+            Intent i = new Intent(holder.itemView.getContext(),detalle.class);
+            i.putExtra("contra",cantanteLista.get(position));
 
-                holder.itemView.getContext().startActivity(i);
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            if (user != null) {
+                String email = user.getEmail();
+                i.putExtra("titulo",email);
             }
+
+            holder.itemView.getContext().startActivity(i);
         });
     }
 

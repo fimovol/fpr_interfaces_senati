@@ -25,7 +25,7 @@ public class ListaClienteAsapter extends RecyclerView.Adapter<ListaClienteAsapte
     public ClientesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater
                 .from(parent.getContext())
-                .inflate(R.layout.prueba_clientes_borrar,null,false);
+                .inflate(R.layout.prueba_clientes_borrar,parent,false);
         return new ClientesViewHolder(view);
     }
 
