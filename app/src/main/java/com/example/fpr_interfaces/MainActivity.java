@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        setTitle("BIENVENIDO");
+
         logeo = findViewById(R.id.logeo);
         registro = findViewById(R.id.registro);
         checkterapeuta = findViewById(R.id.checkterapeuta);

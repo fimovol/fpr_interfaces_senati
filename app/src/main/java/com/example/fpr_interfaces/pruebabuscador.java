@@ -57,16 +57,6 @@ public class pruebabuscador extends AppCompatActivity implements SearchView.OnQu
     }
     public void deslogelearse(View vista){
 
-        /*
-        esto crea la base de datos
-        Dbhelper2 dbhelper2 = new Dbhelper2(pruebabuscador.this);
-        SQLiteDatabase db = dbhelper2.getWritableDatabase();
-        if(db != null){
-            Toast.makeText(pruebabuscador.this,"BASE DE DATOS CREADA",Toast.LENGTH_LONG).show();
-        }else{
-            Toast.makeText(pruebabuscador.this,"error",Toast.LENGTH_LONG).show();
-        }
-        */
         System.out.println(newString);
         FirebaseAuth.getInstance().signOut();
         Intent deslogeate = new Intent(pruebabuscador.this,MainActivity.class);
@@ -97,7 +87,6 @@ public class pruebabuscador extends AppCompatActivity implements SearchView.OnQu
         return  cantante;
     }
     public void comprarterapia(View vista){
-        System.out.println("ME LLAMO JAVIER"+vista);
         Toast.makeText(pruebabuscador.this, "Felicidades Compraste tu cita", Toast.LENGTH_LONG).show();
     }
     @Override
