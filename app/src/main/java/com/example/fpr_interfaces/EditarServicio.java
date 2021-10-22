@@ -11,7 +11,7 @@ import com.example.fpr_interfaces.db.DbClientes;
 
 public class EditarServicio extends AppCompatActivity {
     Bundle extras;
-    String newString,id_terapia;
+    String newString,id_terapia,getNombre,getPrecio,getDescripcion;
     EditText editserviceprecio,editservisdescrip,editservicenombre;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +25,9 @@ public class EditarServicio extends AppCompatActivity {
         } else {
             newString= extras.getString("email");
             id_terapia= extras.getString("id_terapia");
+            getNombre= extras.getString("getNombre");
+            getPrecio= extras.getString("getPrecio");
+            getDescripcion= extras.getString("getDescripcion");
             setTitle(newString);
         }
 
@@ -32,6 +35,9 @@ public class EditarServicio extends AppCompatActivity {
         editservisdescrip= findViewById(R.id.editservisdescrip);
         editserviceprecio= findViewById(R.id.editserviceprecio);
 
+        editservicenombre.setText(getNombre);
+        editservisdescrip.setText(getDescripcion);
+        editserviceprecio.setText(getPrecio);
 
     }
     public void editservice(View v ){

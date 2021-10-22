@@ -44,6 +44,9 @@ public class ListaTerapiasPorTerapeutaAdapter extends RecyclerView.Adapter<Lista
             public void onClick(View v) {
                 Intent i = new Intent(holder.itemView.getContext(), EditarServicio.class);
                 i.putExtra("id_terapia",listaterapias.get(position).getId_terapia());
+                i.putExtra("getNombre",listaterapias.get(position).getNombre());
+                i.putExtra("getPrecio",listaterapias.get(position).getPrecio());
+                i.putExtra("getDescripcion",listaterapias.get(position).getDescripcion());
 
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 if (user != null) {
