@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="nombre"
+            android:hint="Titulo"
             android:inputType="textPersonName"
             android:text="" />
 
@@ -34,10 +34,11 @@
         <EditText
             android:id="@+id/editservisdescrip"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="180dp"
             android:ems="10"
-            android:hint="descripción"
-            android:inputType="textPersonName"
+            android:hint="Descripción"
+            android:inputType="textPersonName|textMultiLine"
+            android:gravity="top|left"
             android:text="" />
 
 
@@ -46,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="precio"
+            android:hint="Precio"
             android:inputType="number"
             android:text="" />
 
