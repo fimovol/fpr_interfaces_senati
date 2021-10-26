@@ -6,10 +6,13 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.fpr_interfaces.db.DbClientes;
+
 public class detalle extends AppCompatActivity {
     private ImageView imgItemDetalle;
-    private TextView txt1,txt2;
+    private TextView txt1,txt2,usuariotext;
     private CantanteModelo itemDetalle;
+    String id_terapeuta;
 
     Bundle extras;
     String newString;
@@ -35,11 +38,23 @@ public class detalle extends AppCompatActivity {
         imgItemDetalle= findViewById(R.id.imageView);
         txt1= findViewById(R.id.textView2);
         txt2= findViewById(R.id.textView3);
+        usuariotext=findViewById(R.id.usuario);
     }
     public void initialValues(){
         itemDetalle = (CantanteModelo) getIntent().getExtras().getSerializable("contra");
+
+        id_terapeuta=itemDetalle.getId_terapia();
+        DbClientes db = new DbClientes(this);
+        String descripcion=db.descripcionDelTerapeuta(id_terapeuta);
+        String usuario=db.usuarioDelTerapeuta(id_terapeuta);
+        //cambiar
         imgItemDetalle.setImageResource(itemDetalle.getFotocantante());
         txt1.setText(itemDetalle.getCantante());
-        txt2.setText(itemDetalle.getNacionalidad());
+        txt2.setText(descripcion);
+        usuariotext.setText("Correo: "+usuario);
+
+
+
+        System.out.println(id_terapeuta+"asedasd");
     }
 }

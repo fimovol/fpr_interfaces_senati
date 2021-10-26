@@ -21,7 +21,7 @@ public class Registrar_terapeuta extends AppCompatActivity {
     String email,contrasena;
     Button button;
     EditText descripcion;
-    String foto="R.drawable._6";
+    String foto="2131165193";
     private RadioGroup radio;
     private RadioButton radiobutton;
     @Override
@@ -57,11 +57,11 @@ public class Registrar_terapeuta extends AppCompatActivity {
         switch(view.getId()) {
             case R.id.radioButton2:
                 if (checked)
-                    foto="R.drawable._8";
+                    foto="2131165195";
                     break;
             case R.id.radioButton:
                 if (checked)
-                    foto="R.drawable._6";
+                    foto="2131165193";//numero que identifica el drawable una cosa de locos
                     break;
         }
     }

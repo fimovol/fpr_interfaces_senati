@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import androidx.annotation.Nullable;
 
+import com.example.fpr_interfaces.CantanteModelo;
 import com.example.fpr_interfaces.Cliente;
 import com.example.fpr_interfaces.entidades.Clientes;
 import com.example.fpr_interfaces.entidades.Terapiasentidad;
@@ -182,6 +183,57 @@ public class DbClientes extends Dbhelper2{
         cursor = db.rawQuery("select saldo from tb_cliente where usuario=?",
                 new String [] {String.valueOf(clientes)});
 
+        if(cursor.moveToFirst()){
+            cliente=cursor.getString(0);
+        }
+        cursor.close();
+        return cliente;
+    }
+    public ArrayList<CantanteModelo> mostrarTerapias(){
+        Dbhelper2 dbhelper = new Dbhelper2(context);
+        SQLiteDatabase db = dbhelper.getWritableDatabase();
+
+        ArrayList<CantanteModelo> listaclientes = new ArrayList<>();
+        CantanteModelo cliente = null;
+        Cursor cursor = null;
+
+        cursor = db.rawQuery("SELECT t.nombre, p.descripcion,t.foto,p.precio,t.id_terapeuta FROM tb_terapeutas as t INNER JOIN terapias as p on t.id_terapeuta = p.id_terapeutafk",null);
+
+        if(cursor.moveToFirst()){
+            do{
+                cliente = new CantanteModelo();
+                cliente.setCantante(cursor.getString(0));
+                cliente.setNacionalidad(cursor.getString(1));
+                cliente.setFotocantante(cursor.getInt(2));
+                cliente.setPrecio(cursor.getString(3));
+                cliente.setId_terapia(cursor.getString(4));
+
+                listaclientes.add(cliente);
+            }while(cursor.moveToNext());
+        }
+        cursor.close();
+        return listaclientes;
+    }
+    public String descripcionDelTerapeuta(String id_terapeuta){
+        Dbhelper2 dbhelper = new Dbhelper2(context);
+        SQLiteDatabase db = dbhelper.getWritableDatabase();
+        String cliente = null;
+        Cursor cursor = null;
+        cursor = db.rawQuery("select descripcion from tb_terapeutas where id_terapeuta=?",
+                new String [] {String.valueOf(id_terapeuta)});
+        if(cursor.moveToFirst()){
+            cliente=cursor.getString(0);
+        }
+        cursor.close();
+        return cliente;
+    }
+    public String usuarioDelTerapeuta(String id_terapeuta){
+        Dbhelper2 dbhelper = new Dbhelper2(context);
+        SQLiteDatabase db = dbhelper.getWritableDatabase();
+        String cliente = null;
+        Cursor cursor = null;
+        cursor = db.rawQuery("select usuario from tb_terapeutas where id_terapeuta=?",
+                new String [] {String.valueOf(id_terapeuta)});
         if(cursor.moveToFirst()){
             cliente=cursor.getString(0);
         }

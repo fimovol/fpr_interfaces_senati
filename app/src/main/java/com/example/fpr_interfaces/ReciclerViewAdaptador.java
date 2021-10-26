@@ -52,7 +52,7 @@ public class ReciclerViewAdaptador extends RecyclerView.Adapter<ReciclerViewAdap
         holder.cantante.setText(cantanteLista.get(position).getCantante());
         holder.nacionalidad.setText(cantanteLista.get(position).getNacionalidad());
         holder.fotocantante.setImageResource(cantanteLista.get(position).getFotocantante());
-        holder.precio.setText(cantanteLista.get(position).getPrecio());
+        holder.precio.setText("S/."+cantanteLista.get(position).getPrecio());
 
         holder.itemView.setOnClickListener(v -> {
             Intent i = new Intent(holder.itemView.getContext(),detalle.class);
