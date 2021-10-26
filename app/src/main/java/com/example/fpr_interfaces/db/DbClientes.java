@@ -156,4 +156,36 @@ public class DbClientes extends Dbhelper2{
                         ,String.valueOf(id)});
         cursor.getCount();
     }
+    public String traerNombreClientes(String clientes){
+        Dbhelper2 dbhelper = new Dbhelper2(context);
+        SQLiteDatabase db = dbhelper.getWritableDatabase();
+
+        String cliente = null;
+        Cursor cursor = null;
+
+        cursor = db.rawQuery("select nombre from tb_cliente where usuario=?",
+                new String [] {String.valueOf(clientes)});
+
+        if(cursor.moveToFirst()){
+                cliente=cursor.getString(0);
+        }
+        cursor.close();
+        return cliente;
+    }
+    public String traerSaldoClientes(String clientes){
+        Dbhelper2 dbhelper = new Dbhelper2(context);
+        SQLiteDatabase db = dbhelper.getWritableDatabase();
+
+        String cliente = null;
+        Cursor cursor = null;
+
+        cursor = db.rawQuery("select saldo from tb_cliente where usuario=?",
+                new String [] {String.valueOf(clientes)});
+
+        if(cursor.moveToFirst()){
+            cliente=cursor.getString(0);
+        }
+        cursor.close();
+        return cliente;
+    }
 }

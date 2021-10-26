@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Fpr_interfaces">
-        <activity android:name=".agregarterapia"></activity>
+        <activity android:name=".Registrar_terapeuta"></activity>
+        <activity android:name=".agregarterapia" />
         <activity android:name=".MostrarClientePrueba" />
         <activity android:name=".detalle" />
         <activity android:name=".pruebabuscador" />

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Registrar_terapeuta">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="87dp"
+        tools:layout_editor_absoluteY="49dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="REGISTRATE AHORA"
+            android:textSize="30dp"
+            android:textColor="@color/black"/>
+        <EditText
+            android:id="@+id/descripcion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="descripcion"
+            android:inputType="textEmailAddress"
+            android:text="" />
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp" >
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:weightSum="1"
+            >
+
+                <RadioButton
+                    android:id="@+id/radioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="true"
+                    android:onClick="checkitem"
+                    android:text="1"
+                    android:textSize="25dp"
+                    android:layout_below="@id/descripcion"
+                    android:layout_alignParentLeft="true"
+                    />
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="86dp"
+                    android:layout_height="86dp"
+                    app:srcCompat="@drawable/_6"
+                    android:layout_below="@id/descripcion"
+                    android:layout_alignParentRight="true"
+                    />
+
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.13"
+                    android:checked="false"
+                    android:onClick="checkitem"
+                    android:text="2"
+                    android:textSize="25dp" />
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="86dp"
+                    android:layout_height="86dp"
+                    app:srcCompat="@drawable/_8" />
+
+        </RadioGroup>
+        </RelativeLayout>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="18dp" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="registrate"
+            android:shadowColor="@color/black"
+            android:shadowDx="4"
+            android:shadowRadius="3"
+            android:shadowDy="4"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

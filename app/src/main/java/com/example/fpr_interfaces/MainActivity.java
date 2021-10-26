@@ -60,12 +60,15 @@ public class MainActivity extends AppCompatActivity {
                                     DbClientes dbclientes = new DbClientes(MainActivity.this);
                                     boolean respuesta = dbclientes.comprobarsiexisteelterapeuta(usuari);
                                     if(!respuesta){
-                                        dbclientes.agregaratablaterapeuta("nombre",contra,"","","",usuari);
+                                        Intent terapeuta = new Intent(MainActivity.this,Registrar_terapeuta.class);
+                                        terapeuta.putExtra("usuari",usuari);
+                                        terapeuta.putExtra("contra",contra);
+                                        startActivity(terapeuta);
+                                    }else{
+                                        Intent terapeuta = new Intent(MainActivity.this,Terapeuta.class);
+                                        terapeuta.putExtra("email",task.getResult().getUser().getEmail());
+                                        startActivity(terapeuta);
                                     }
-
-                                    Intent terapeuta = new Intent(MainActivity.this,Terapeuta.class);
-                                    terapeuta.putExtra("email",task.getResult().getUser().getEmail());
-                                    startActivity(terapeuta);
                                 }else{
                                     Intent terapeuta = new Intent(MainActivity.this,pruebabuscador.class);
                                     terapeuta.putExtra("email",task.getResult().getUser().getEmail());
