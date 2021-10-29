@@ -240,4 +240,14 @@ public class DbClientes extends Dbhelper2{
         cursor.close();
         return cliente;
     }
+    public void eliminarTerapia(String idDeLaTerapia){
+        Dbhelper2 dbhelper = new Dbhelper2(context);
+        SQLiteDatabase db = dbhelper.getWritableDatabase();
+
+        Cursor cursor = null;
+        cursor =db.rawQuery(
+                "DELETE FROM terapias WHERE id_terapia=?;"
+                ,new String [] {String.valueOf(idDeLaTerapia)});
+        cursor.getCount();
+    }
 }

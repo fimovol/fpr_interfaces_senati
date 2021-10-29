@@ -12,6 +12,19 @@
         android:gravity="center"
         android:orientation="vertical">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/botonEliminar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🗑️" />
+        </LinearLayout>
+
         <TextView
 
             android:layout_width="wrap_content"
@@ -36,9 +49,9 @@
             android:layout_width="wrap_content"
             android:layout_height="180dp"
             android:ems="10"
+            android:gravity="top|left"
             android:hint="Descripción"
             android:inputType="textPersonName|textMultiLine"
-            android:gravity="top|left"
             android:text="" />
 
 
@@ -55,10 +68,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="editservice"
-            android:text="editar servicio"
             android:shadowColor="@color/black"
             android:shadowDx="4"
+            android:shadowDy="4"
             android:shadowRadius="3"
-            android:shadowDy="4"/>
+            android:text="editar servicio" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

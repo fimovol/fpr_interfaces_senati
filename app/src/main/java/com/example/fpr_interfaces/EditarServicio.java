@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.fpr_interfaces.db.DbClientes;
 
@@ -13,6 +15,7 @@ public class EditarServicio extends AppCompatActivity {
     Bundle extras;
     String newString,id_terapia,getNombre,getPrecio,getDescripcion;
     EditText editserviceprecio,editservisdescrip,editservicenombre;
+    Button botonEliminar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,11 +37,19 @@ public class EditarServicio extends AppCompatActivity {
         editservicenombre= findViewById(R.id.editservicenombre);
         editservisdescrip= findViewById(R.id.editservisdescrip);
         editserviceprecio= findViewById(R.id.editserviceprecio);
+        botonEliminar=findViewById(R.id.botonEliminar);
 
         editservicenombre.setText(getNombre);
         editservisdescrip.setText(getDescripcion);
         editserviceprecio.setText(getPrecio);
 
+        botonEliminar.setOnClickListener(v -> {
+            DbClientes db = new DbClientes(this);
+            db.eliminarTerapia(id_terapia);
+            Intent eliminar = new Intent(this,Terapeuta.class);
+            eliminar.putExtra("email",newString);
+            startActivity(eliminar);
+        });
     }
     public void editservice(View v ){
         String nombre=editservicenombre.getText().toString();
