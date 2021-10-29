@@ -30,8 +30,9 @@ public class Terapeuta extends AppCompatActivity {
         recyclerTerapiasporTerapeuta=(RecyclerView)findViewById(R.id.recyclerTerapiasporTerapeuta);
         recyclerTerapiasporTerapeuta.setLayoutManager(new LinearLayoutManager(this));
         DbClientes dbclientes = new DbClientes(Terapeuta.this);
+        String elTerapeutaes = newString;
         ListaTerapiasPorTerapeutaAdapter adaptador=new ListaTerapiasPorTerapeutaAdapter
-                (dbclientes.mostrarTerapiasPorTerapeuta(newString));
+                (dbclientes.mostrarTerapiasPorTerapeuta(elTerapeutaes));
         recyclerTerapiasporTerapeuta.setAdapter(adaptador);
 
     }

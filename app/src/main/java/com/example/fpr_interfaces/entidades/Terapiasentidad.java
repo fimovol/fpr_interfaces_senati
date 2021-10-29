@@ -5,6 +5,11 @@ public class Terapiasentidad {
     private String precio;
     private String descripcion;
     private String id_terapia;
+    private String compradoSiNo;
+
+    public String getCompradoSiNo() { return compradoSiNo; }
+
+    public void setCompradoSiNo(String compradoSiNo) { this.compradoSiNo = compradoSiNo; }
 
     public String getId_terapia() {
         return id_terapia;

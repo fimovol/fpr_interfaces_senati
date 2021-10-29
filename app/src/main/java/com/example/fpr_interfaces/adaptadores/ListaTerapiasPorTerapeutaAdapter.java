@@ -15,6 +15,7 @@ import com.example.fpr_interfaces.detalle;
 import com.example.fpr_interfaces.entidades.Terapiasentidad;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import androidx.cardview.widget.CardView;
 
 import java.util.ArrayList;
 
@@ -39,7 +40,9 @@ public class ListaTerapiasPorTerapeutaAdapter extends RecyclerView.Adapter<Lista
         holder.nombreterapiaplantilla.setText(listaterapias.get(position).getNombre());
         holder.precioterapiaplantilla.setText(preicoConSoles);
         holder.descipterapiaplantilla.setText(listaterapias.get(position).getDescripcion());
-
+        if(listaterapias.get(position).getCompradoSiNo().equals("1")){
+            holder.anadircolordecompra.setBackgroundColor(0xff80ff80);//verde clarito jeje
+        }
         holder.botoneditarTerapia.setOnClickListener(v -> {
             Intent i = new Intent(holder.itemView.getContext(), EditarServicio.class);
             i.putExtra("id_terapia",listaterapias.get(position).getId_terapia());
@@ -65,12 +68,14 @@ public class ListaTerapiasPorTerapeutaAdapter extends RecyclerView.Adapter<Lista
     public class TerapiasViweHolder extends RecyclerView.ViewHolder {
         TextView nombreterapiaplantilla,precioterapiaplantilla,descipterapiaplantilla;
         Button botoneditarTerapia;
+        CardView anadircolordecompra;
         public TerapiasViweHolder(@NonNull View itemView) {
             super(itemView);
             nombreterapiaplantilla=itemView.findViewById(R.id.nombreterapiaplantilla);
             precioterapiaplantilla=itemView.findViewById(R.id.precioterapiaplantilla);
             descipterapiaplantilla=itemView.findViewById(R.id.descipterapiaplantilla);
             botoneditarTerapia=itemView.findViewById(R.id.botoneditarTerapia);
+            anadircolordecompra=itemView.findViewById(R.id.anadircolordecompra);
         }
     }
 }

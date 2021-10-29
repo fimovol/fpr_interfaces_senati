@@ -3,7 +3,7 @@ package com.example.fpr_interfaces;
 import java.io.Serializable;
 
 public class CantanteModelo implements Serializable {
-    private String cantante,nacionalidad,precio,id_terapia;
+    private String cantante,nacionalidad,precio,id_terapia,id_terapia_estesi;
     private int fotocantante;
 
     public CantanteModelo() {
@@ -16,6 +16,15 @@ public class CantanteModelo implements Serializable {
         this.fotocantante = fotocantante;
         this.precio = precio;
         this.id_terapia = id_terapia;
+
+    }
+
+    public String getId_terapia_estesi() {
+        return id_terapia_estesi;
+    }
+
+    public void setId_terapia_estesi(String id_terapia_estesi) {
+        this.id_terapia_estesi = id_terapia_estesi;
     }
 
     public String getId_terapia() {

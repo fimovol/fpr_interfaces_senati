@@ -64,10 +64,6 @@ public class pruebabuscador extends AppCompatActivity implements SearchView.OnQu
         Intent deslogeate = new Intent(pruebabuscador.this,MainActivity.class);
         startActivity(deslogeate);
     }
-
-    public void comprarterapia(View vista){
-        Toast.makeText(pruebabuscador.this, "Felicidades Compraste tu cita", Toast.LENGTH_LONG).show();
-    }
     @Override
     public boolean onQueryTextSubmit(String query) {
         return false;
