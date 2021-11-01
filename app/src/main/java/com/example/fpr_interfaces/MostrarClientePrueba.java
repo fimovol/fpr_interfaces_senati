@@ -15,6 +15,9 @@ import java.util.ArrayList;
 public class MostrarClientePrueba extends AppCompatActivity {
     public RecyclerView recyclerpruebacliente;
     public ArrayList<Clientes> listaClientesArray;
+
+    Bundle extras;
+    String newString;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,5 +30,13 @@ public class MostrarClientePrueba extends AppCompatActivity {
 
         ListaClienteAsapter adapter = new ListaClienteAsapter(dbclientes.mostraClientes());
         recyclerpruebacliente.setAdapter(adapter);
+
+        extras = getIntent().getExtras();
+        if(extras == null) {
+            newString= null;
+        } else {
+            newString= extras.getString("email");
+            setTitle(newString);
+        }
     }
 }

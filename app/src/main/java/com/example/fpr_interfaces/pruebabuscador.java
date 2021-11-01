@@ -76,6 +76,7 @@ public class pruebabuscador extends AppCompatActivity implements SearchView.OnQu
     }
     public void gestionatucuenta(View v){
         Intent gestioncliente = new Intent(pruebabuscador.this,MostrarClientePrueba.class);
+        gestioncliente.putExtra("email",newString);
         startActivity(gestioncliente);
     }
 
