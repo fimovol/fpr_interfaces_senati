@@ -32,7 +32,6 @@ public class pruebabuscador extends AppCompatActivity implements SearchView.OnQu
     Bundle extras;
     String newString;
 
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,9 +41,9 @@ public class pruebabuscador extends AppCompatActivity implements SearchView.OnQu
         recyclerViewCantante=(RecyclerView)findViewById(R.id.reciclercantante);
         recyclerViewCantante.setLayoutManager(new LinearLayoutManager(this));
 
-        DbClientes hola = new DbClientes(this);
+        DbClientes dbconsulta = new DbClientes(this);
 
-        adaptadorCantante=new ReciclerViewAdaptador(hola.mostrarTerapias());
+        adaptadorCantante=new ReciclerViewAdaptador(dbconsulta.mostrarTerapias());
         recyclerViewCantante.setAdapter(adaptadorCantante);
 
         svSearch.setOnQueryTextListener(this);
