@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 import com.example.fpr_interfaces.adaptadores.ListaClienteAsapter;
 import com.example.fpr_interfaces.db.DbClientes;
@@ -18,6 +19,8 @@ public class MostrarClientePrueba extends AppCompatActivity {
 
     Bundle extras;
     String newString;
+
+    TextView saldodelcliente;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,5 +41,9 @@ public class MostrarClientePrueba extends AppCompatActivity {
             newString= extras.getString("email");
             setTitle(newString);
         }
+        saldodelcliente = findViewById(R.id.saldodelcliente);
+        DbClientes db = new DbClientes(this);
+
+        saldodelcliente.setText("Su saldo: S/."+db.traerSaldoClientes(newString));
     }
 }
