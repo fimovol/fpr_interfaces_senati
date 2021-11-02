@@ -25,15 +25,6 @@ public class MostrarClientePrueba extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mostrar_cliente_prueba);
-
-        recyclerpruebacliente = findViewById(R.id.recyclerpruebacliente);
-        recyclerpruebacliente.setLayoutManager(new LinearLayoutManager(this));
-        DbClientes dbclientes = new DbClientes(MostrarClientePrueba.this);
-        listaClientesArray = new ArrayList<>();
-
-        ListaClienteAsapter adapter = new ListaClienteAsapter(dbclientes.mostraClientes());
-        recyclerpruebacliente.setAdapter(adapter);
-
         extras = getIntent().getExtras();
         if(extras == null) {
             newString= null;
@@ -41,6 +32,15 @@ public class MostrarClientePrueba extends AppCompatActivity {
             newString= extras.getString("email");
             setTitle(newString);
         }
+        recyclerpruebacliente = findViewById(R.id.recyclerpruebacliente);
+        recyclerpruebacliente.setLayoutManager(new LinearLayoutManager(this));
+        DbClientes dbclientes = new DbClientes(MostrarClientePrueba.this);
+        listaClientesArray = new ArrayList<>();
+        int id_cliente =dbclientes.encontrarIdDelClienteConUsuario(newString);
+        ListaClienteAsapter adapter = new ListaClienteAsapter(dbclientes.loQueComproElCliente(id_cliente));
+        recyclerpruebacliente.setAdapter(adapter);
+
+
         saldodelcliente = findViewById(R.id.saldodelcliente);
         DbClientes db = new DbClientes(this);
 

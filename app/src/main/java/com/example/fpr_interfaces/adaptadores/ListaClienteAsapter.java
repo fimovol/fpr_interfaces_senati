@@ -3,6 +3,7 @@ package com.example.fpr_interfaces.adaptadores;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -25,16 +26,16 @@ public class ListaClienteAsapter extends RecyclerView.Adapter<ListaClienteAsapte
     public ClientesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater
                 .from(parent.getContext())
-                .inflate(R.layout.prueba_clientes_borrar,parent,false);
+                .inflate(R.layout.servicios_que_compro_el_cliente,parent,false);
         return new ClientesViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ClientesViewHolder holder, int position) {
-        holder.textView4nombre.setText(listaClientes.get(position).getNomre());
-        holder.textView5usuario.setText(listaClientes.get(position).getUsuario());
-        holder.textView6saldo.setText(listaClientes.get(position).getSaldo());
-        holder.textView7contra.setText(listaClientes.get(position).getContrasena());
+        holder.nombre.setText(listaClientes.get(position).getNomre());
+        holder.precio.setText("S/."+listaClientes.get(position).getPrecio());
+        holder.descripcion.setText(listaClientes.get(position).getDescripcion());
+        holder.imagen.setImageResource(listaClientes.get(position).getImagen());
     }
 
     @Override
@@ -43,13 +44,14 @@ public class ListaClienteAsapter extends RecyclerView.Adapter<ListaClienteAsapte
     }
 
     public class ClientesViewHolder extends RecyclerView.ViewHolder {
-        TextView textView4nombre,textView5usuario,textView6saldo,textView7contra;
+        TextView nombre,precio,descripcion;
+        ImageView imagen;
         public ClientesViewHolder(@NonNull View itemView) {
             super(itemView);
-            textView4nombre = itemView.findViewById(R.id.textView4nombre);
-            textView5usuario = itemView.findViewById(R.id.textView5usuario);
-            textView6saldo = itemView.findViewById(R.id.textView6saldo);
-            textView7contra = itemView.findViewById(R.id.textView7contra);
+            nombre = itemView.findViewById(R.id.nombre);
+            precio = itemView.findViewById(R.id.precio);
+            descripcion = itemView.findViewById(R.id.descripcion);
+            imagen = itemView.findViewById(R.id.imagen);
         }
     }
 }

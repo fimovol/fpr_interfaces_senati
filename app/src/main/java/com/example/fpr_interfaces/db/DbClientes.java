@@ -79,30 +79,7 @@ public class DbClientes extends Dbhelper2{
 
         return id;
     }
-    public ArrayList<Clientes> mostraClientes(){
-        Dbhelper2 dbhelper = new Dbhelper2(context);
-        SQLiteDatabase db = dbhelper.getWritableDatabase();
 
-        ArrayList<Clientes> listaclientes = new ArrayList<>();
-        Clientes cliente = null;
-        Cursor cursor = null;
-
-        cursor = db.rawQuery("select * from tb_cliente",null);
-
-        if(cursor.moveToFirst()){
-            do{
-                cliente = new Clientes();
-                cliente.setNomre(cursor.getString(1));
-                cliente.setContrasena(cursor.getString(2));
-                cliente.setSaldo(cursor.getString(3));
-                cliente.setUsuario(cursor.getString(4));
-
-                listaclientes.add(cliente);
-            }while(cursor.moveToNext());
-        }
-        cursor.close();
-        return listaclientes;
-    }
     public ArrayList<Terapiasentidad> mostrarTerapiasPorTerapeuta(String terapeuta){
         Dbhelper2 dbhelper = new Dbhelper2(context);
         SQLiteDatabase db = dbhelper.getWritableDatabase();
@@ -215,6 +192,33 @@ public class DbClientes extends Dbhelper2{
         }
         cursor.close();
         return listaclientes;
+    }
+    public ArrayList<Clientes> loQueComproElCliente(int id_cliente){
+        Dbhelper2 dbhelper = new Dbhelper2(context);
+        SQLiteDatabase db = dbhelper.getWritableDatabase();
+
+        ArrayList<Clientes> loQueComproElCliente = new ArrayList<>();
+        Clientes cliente = null;
+        Cursor cursor = null;
+
+        cursor = db.rawQuery("SELECT t.nombre,p.precio, p.descripcion,t.foto,t.id_terapeuta,p.id_terapia FROM tb_terapeutas as t INNER JOIN terapias as p on t.id_terapeuta = p.id_terapeutafk where p.id_clientefk = ? AND p.comprado = 1",
+                new String [] {String.valueOf(id_cliente)});
+
+        if(cursor.moveToFirst()){
+            do{
+                cliente = new Clientes();
+                cliente.setNomre(cursor.getString(0));
+                cliente.setPrecio(cursor.getString(1));
+                cliente.setDescripcion(cursor.getString(2));
+                cliente.setImagen(cursor.getInt(3));
+                cliente.setId_terapeuta(cursor.getString(4));
+                cliente.setId_terapia(cursor.getString(5));
+
+                loQueComproElCliente.add(cliente);
+            }while(cursor.moveToNext());
+        }
+        cursor.close();
+        return loQueComproElCliente;
     }
     public String descripcionDelTerapeuta(String id_terapeuta){
         Dbhelper2 dbhelper = new Dbhelper2(context);
