@@ -29,6 +29,25 @@
             android:textSize="29dp"
             android:textColor="@color/black"/>
     </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="right">
+            <Button
+                android:id="@+id/volverpb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="👋"/>
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:id="@+id/botonsaldo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="saldo"/>
+        </LinearLayout>
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerpruebacliente"
             android:layout_width="match_parent"

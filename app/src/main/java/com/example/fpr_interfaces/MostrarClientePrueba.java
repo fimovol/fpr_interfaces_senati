@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.fpr_interfaces.adaptadores.ListaClienteAsapter;
@@ -21,6 +23,7 @@ public class MostrarClientePrueba extends AppCompatActivity {
     String newString;
 
     TextView saldodelcliente;
+    Button botonsaldo,volverpb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +35,8 @@ public class MostrarClientePrueba extends AppCompatActivity {
             newString= extras.getString("email");
             setTitle(newString);
         }
+        botonsaldo = findViewById(R.id.botonsaldo);
+        volverpb = findViewById(R.id.volverpb);
         recyclerpruebacliente = findViewById(R.id.recyclerpruebacliente);
         recyclerpruebacliente.setLayoutManager(new LinearLayoutManager(this));
         DbClientes dbclientes = new DbClientes(MostrarClientePrueba.this);
@@ -45,5 +50,17 @@ public class MostrarClientePrueba extends AppCompatActivity {
         DbClientes db = new DbClientes(this);
 
         saldodelcliente.setText("Su saldo: S/."+db.traerSaldoClientes(newString));
+
+        botonsaldo.setOnClickListener(v ->{
+            Intent aumentarSaldo = new Intent(MostrarClientePrueba.this,AumentarSaldo.class);
+            aumentarSaldo.putExtra("email",newString);
+            System.out.println(newString);
+            startActivity(aumentarSaldo);
+        });
+        volverpb.setOnClickListener(v->{
+            Intent volver = new Intent(MostrarClientePrueba.this,pruebabuscador.class);
+            volver.putExtra("email",newString);
+            startActivity(volver);
+        });
     }
 }

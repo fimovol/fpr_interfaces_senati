@@ -324,4 +324,14 @@ public class DbClientes extends Dbhelper2{
         cursor.close();
         return cliente;
     }
+    public void cambiarSaldoCliente(String usuario,String saldo){
+        Dbhelper2 dbhelper = new Dbhelper2(context);
+        SQLiteDatabase db = dbhelper.getWritableDatabase();
+
+        Cursor cursor = null;
+        cursor =db.rawQuery("UPDATE tb_cliente SET saldo = ? WHERE usuario = ?;"
+                ,new String [] {String.valueOf(saldo)
+                        ,String.valueOf(usuario)});
+        cursor.getCount();
+    }
 }
