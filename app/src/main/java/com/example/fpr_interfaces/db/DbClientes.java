@@ -9,6 +9,7 @@ import androidx.annotation.Nullable;
 
 import com.example.fpr_interfaces.CantanteModelo;
 import com.example.fpr_interfaces.Cliente;
+import com.example.fpr_interfaces.entidades.Antecedentes;
 import com.example.fpr_interfaces.entidades.Clientes;
 import com.example.fpr_interfaces.entidades.Terapiasentidad;
 
@@ -219,6 +220,31 @@ public class DbClientes extends Dbhelper2{
         }
         cursor.close();
         return loQueComproElCliente;
+    }
+    //SELECT tb_cliente.usuario,terapias.id_clientefk  FROM tb_cliente INNER JOIN terapias ON tb_cliente.id_cliente = terapias.id_clientefk where terapias.id_terapeutafk=14 AND terapias.id_clientefk>0;
+    public ArrayList<Antecedentes> traeusuarioquecomproalterapeuta(String id_terapeutafk){
+        Dbhelper2 dbhelper = new Dbhelper2(context);
+        SQLiteDatabase db = dbhelper.getWritableDatabase();
+
+        ArrayList<Antecedentes> traeusuarioquecomproalterapeuta = new ArrayList<>();
+        Antecedentes cliente = null;
+        Cursor cursor = null;
+
+        cursor = db.rawQuery("SELECT tb_cliente.usuario,terapias.id_clientefk  FROM tb_cliente INNER JOIN terapias ON tb_cliente.id_cliente = terapias.id_clientefk where terapias.id_terapeutafk=? AND terapias.id_clientefk>0;",
+                new String [] {String.valueOf(id_terapeutafk)});
+
+        if(cursor.moveToFirst()){
+            do{
+                cliente = new Antecedentes();
+                cliente.setUsuario(cursor.getString(0));
+                cliente.setId_clientefk(cursor.getString(1));
+
+                traeusuarioquecomproalterapeuta.add(cliente);
+            }while(cursor.moveToNext());
+        }
+        cursor.close();
+        System.out.println(traeusuarioquecomproalterapeuta+"  sql base de datos");
+        return traeusuarioquecomproalterapeuta;
     }
     public String descripcionDelTerapeuta(String id_terapeuta){
         Dbhelper2 dbhelper = new Dbhelper2(context);

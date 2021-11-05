@@ -1,12 +1,17 @@
 package com.example.fpr_interfaces;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.fpr_interfaces.adaptadores.ListaAntecedentesTerapeutas;
 import com.example.fpr_interfaces.db.DbClientes;
+
+import java.util.List;
 
 public class detalle extends AppCompatActivity {
     private ImageView imgItemDetalle;
@@ -16,6 +21,9 @@ public class detalle extends AppCompatActivity {
 
     Bundle extras;
     String newString;
+
+    private RecyclerView recyclerView;
+    private ListaAntecedentesTerapeutas adaptador;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,13 +36,23 @@ public class detalle extends AppCompatActivity {
             System.out.println("nada en el titulo :V");
         } else {
             newString= extras.getString("titulo");
+            id_terapeuta= extras.getString("id_terapeuta");
             setTitle(newString);
         }
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        DbClientes dbconsulta = new DbClientes(this);
+
+        adaptador=new ListaAntecedentesTerapeutas(dbconsulta.traeusuarioquecomproalterapeuta(id_terapeuta));
+        recyclerView.setAdapter(adaptador);
+
     }
     public void anadirtitulo(){
 
     }
     public void initialViews(){
+        recyclerView=(RecyclerView)findViewById(R.id.antecedentes);
         imgItemDetalle= findViewById(R.id.imageView);
         txt1= findViewById(R.id.textView2);
         txt2= findViewById(R.id.textView3);

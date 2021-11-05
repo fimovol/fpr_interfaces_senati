@@ -62,7 +62,7 @@ public class ReciclerViewAdaptador extends RecyclerView.Adapter<ReciclerViewAdap
         holder.itemView.setOnClickListener(v -> {
             Intent i = new Intent(holder.itemView.getContext(),detalle.class);
             i.putExtra("contra",cantanteLista.get(position));
-
+            i.putExtra("id_terapeuta",cantanteLista.get(position).getId_terapia());
             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
             if (user != null) {
                 String email = user.getEmail();
