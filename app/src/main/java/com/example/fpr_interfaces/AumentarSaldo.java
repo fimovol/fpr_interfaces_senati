@@ -36,11 +36,15 @@ public class AumentarSaldo extends AppCompatActivity {
             String saldoaAumentar = saldo.getText().toString();
             if(!saldoaAumentar.equals("")){
                 DbClientes db = new DbClientes(this);
-                db.cambiarSaldoCliente(newString,saldoaAumentar);
+                String saldodelcliente=db.traerSaldoClientes(newString);
+                int saldocliente= Integer.parseInt(saldodelcliente);
+                int saldoaaumentarentero = Integer.parseInt(saldoaAumentar);
+                int total = saldocliente+saldoaaumentarentero;
+                String totalstring = String.valueOf(total);
+                db.cambiarSaldoCliente(newString,totalstring);
                 Intent gestioncliente = new Intent(AumentarSaldo.this,MostrarClientePrueba.class);
                 gestioncliente.putExtra("email",newString);
                 startActivity(gestioncliente);
-                //consulta base de datos le pasa el usuario y el id y retorna al mostrar cliente
             }
         });
     }

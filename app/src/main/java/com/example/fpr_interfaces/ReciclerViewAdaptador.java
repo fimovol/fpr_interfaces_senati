@@ -85,6 +85,9 @@ public class ReciclerViewAdaptador extends RecyclerView.Adapter<ReciclerViewAdap
                 int saldo_clienteint = Integer.parseInt(saldo_cliente);
                 int precio_terapiaint = Integer.parseInt(precio_terapia);
                 if(saldo_clienteint>=precio_terapiaint){
+                    int preciofinal = saldo_clienteint - precio_terapiaint;
+                    String predioFinalString = String.valueOf(preciofinal);
+                    db.cambiarSaldoCliente(email,predioFinalString);
                     db.comprarTerapia(id_cliente,id_terapia);
                     Intent i = new Intent(holder.comprarterapia.getContext(),pruebabuscador.class);
                     i.putExtra("email",email);
