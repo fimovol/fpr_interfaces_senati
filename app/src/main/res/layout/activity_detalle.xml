@@ -57,6 +57,14 @@
             android:textColor="@color/black"
             android:textSize="18sp" />
 
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="Estoy entusiasmado con las posibilidades que ofrece su caso me gustaria ayudarte a mejorar como persona y lograr juntos el exito que necesitas."
+            android:textColor="@color/black"
+            android:textSize="18sp" />
     </LinearLayout>
 
 </RelativeLayout>

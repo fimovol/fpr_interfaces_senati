@@ -293,6 +293,16 @@ public class DbClientes extends Dbhelper2{
                         ,String.valueOf(id_terapia)});
         cursor.getCount();
     }
+    public void cancelarcompraTerapia(String id_terapia){
+        Dbhelper2 dbhelper = new Dbhelper2(context);
+        SQLiteDatabase db = dbhelper.getWritableDatabase();
+
+        Cursor cursor = null;
+        cursor =db.rawQuery(
+                "UPDATE terapias SET comprado=0 WHERE id_terapia = ?;"
+                ,new String [] {String.valueOf(id_terapia)});
+        cursor.getCount();
+    }
     public int encontrarIdDelClienteConUsuario(String usuario){
         Dbhelper2 dbhelper = new Dbhelper2(context);
         SQLiteDatabase db = dbhelper.getWritableDatabase();
