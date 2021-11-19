@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Fpr_interfaces">
-        <activity android:name=".AumentarSaldo"></activity>
+        <activity android:name=".CargosAdicionales"></activity>
+        <activity android:name=".AumentarSaldo" />
         <activity android:name=".Registrar_terapeuta" />
         <activity android:name=".agregarterapia" />
         <activity android:name=".MostrarClientePrueba" />

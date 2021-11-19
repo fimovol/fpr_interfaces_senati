@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CargosAdicionales">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="cargos adicionales"
+            android:textColor="@color/black"
+            android:textSize="23dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="por uso de la aplicación"
+            android:textColor="@color/black"
+            android:textSize="23dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="en soles:"
+            android:textColor="@color/black"
+            android:textSize="23dp"/>
+        <TextView
+            android:id="@+id/cargoadicional"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$/1"
+            android:textColor="@color/black"
+            android:textSize="20dp"/>
+        <Button
+            android:id="@+id/aumentarsaldodecliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="aceptar"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

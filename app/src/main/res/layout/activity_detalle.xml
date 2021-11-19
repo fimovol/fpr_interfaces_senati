@@ -58,6 +58,10 @@
             android:textColor="@color/white"
             android:textSize="18sp" />
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
         <TextView
             android:id="@+id/textView5"
             android:layout_width="300dp"

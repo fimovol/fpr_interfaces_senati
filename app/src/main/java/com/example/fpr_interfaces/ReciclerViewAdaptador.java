@@ -73,41 +73,16 @@ public class ReciclerViewAdaptador extends RecyclerView.Adapter<ReciclerViewAdap
         });
 
         holder.comprarterapia.setOnClickListener(v -> {
-
-            DbClientes db = new DbClientes(holder.comprarterapia.getContext());
+            //manda id de terapia
+            //
             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-            if (user != null) {
-                String email = user.getEmail();
-                int id_cliente=db.encontrarIdDelClienteConUsuario(email);
-                String id_terapia=cantanteLista.get(position).getId_terapia_estesi();
-                String saldo_cliente= db.traerSaldoClientes(email);
-                String precio_terapia= db.traerPrecioTerapia(id_terapia);
-                int saldo_clienteint = Integer.parseInt(saldo_cliente);
-                int precio_terapiaint = Integer.parseInt(precio_terapia);
-                if(saldo_clienteint>=precio_terapiaint){
-                    int preciofinal = saldo_clienteint - precio_terapiaint;
-                    String predioFinalString = String.valueOf(preciofinal);
-                    db.cambiarSaldoCliente(email,predioFinalString);
-                    db.comprarTerapia(id_cliente,id_terapia);
-                    Intent i = new Intent(holder.comprarterapia.getContext(),pruebabuscador.class);
-                    i.putExtra("email",email);
-                    holder.comprarterapia.getContext().startActivity(i);
+            String email = user.getEmail();
+            String id_terapia=cantanteLista.get(position).getId_terapia_estesi();
+            Intent o = new Intent(holder.comprarterapia.getContext(),CargosAdicionales.class);
+            o.putExtra("email",email);
+            o.putExtra("id_terapia",id_terapia);
+            holder.comprarterapia.getContext().startActivity(o);
 
-                    CharSequence text = "GESTIONA TU CUENTA PA VER LO QUE COMPRASTE";
-                    int duration = Toast.LENGTH_LONG;
-
-                    Toast toast = Toast.makeText(holder.comprarterapia.getContext(), text, duration);
-                    toast.show();
-                }else{
-
-                    CharSequence text = "NO TE ALCANZA EL DINERO PARA ESTO";
-                    int duration = Toast.LENGTH_SHORT;
-
-                    Toast toast = Toast.makeText(holder.comprarterapia.getContext(), text, duration);
-                    toast.show();
-                }
-
-            }
         });
     }
 
