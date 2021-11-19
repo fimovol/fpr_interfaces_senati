@@ -53,8 +53,9 @@
             android:id="@+id/usuario"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
+            android:background="#2c384a"
             android:text="TextView"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="18sp" />
 
         <TextView
