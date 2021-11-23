@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.example.fpr_interfaces.DetalleServicioComprado;
 import com.example.fpr_interfaces.MostrarClientePrueba;
 import com.example.fpr_interfaces.R;
 import com.example.fpr_interfaces.db.DbClientes;
@@ -58,6 +59,19 @@ public class ListaClienteAsapter extends RecyclerView.Adapter<ListaClienteAsapte
             Intent i = new Intent(holder.cancelarterapia.getContext(), MostrarClientePrueba.class);
             i.putExtra("email",email);
             holder.cancelarterapia.getContext().startActivity(i);
+        });
+        holder.itemView.setOnClickListener(v -> {
+            Intent i = new Intent(holder.itemView.getContext(), DetalleServicioComprado.class);
+            i.putExtra("nombre",listaClientes.get(position).getNomre());
+            //sacar descripcion del terapeuta con el id de la base de datos
+            i.putExtra("imagen",String.valueOf(listaClientes.get(position).getImagen()));
+            i.putExtra("id_terapeuta",listaClientes.get(position).getId_terapeuta());
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            if (user != null) {
+                String email = user.getEmail();
+                i.putExtra("titulo",email);
+            }
+            holder.itemView.getContext().startActivity(i);
         });
     }
 
