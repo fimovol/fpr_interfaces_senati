@@ -5,12 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".detalle">
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/antecedentes"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
 
-        />
     <LinearLayout
         android:id="@+id/estoarriba"
         android:layout_width="match_parent"
@@ -70,6 +65,12 @@
             android:text="Estoy entusiasmado con las posibilidades que ofrece su caso me gustaria ayudarte a mejorar como persona y lograr juntos el exito que necesitas."
             android:textColor="@color/black"
             android:textSize="18sp" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/antecedentes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            />
     </LinearLayout>
 
 </RelativeLayout>
