@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Editarantecedentesterapeuta">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EDITA TU PERFIL"
+            android:textColor="#000"
+            android:textSize="30dp" />
+
+
+        <EditText
+            android:id="@+id/editarnombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="NOMBRE"
+            android:inputType="textPersonName"
+            android:text="" />
+
+
+        <EditText
+            android:id="@+id/editardescripcion"
+            android:layout_width="wrap_content"
+            android:layout_height="180dp"
+            android:ems="10"
+            android:gravity="top|left"
+            android:hint="DESCRIPCION"
+            android:inputType="textPersonName|textMultiLine"
+            android:text="" />
+
+        <Button
+            android:id="@+id/editarperfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:shadowColor="@color/black"
+            android:shadowDx="4"
+            android:shadowDy="4"
+            android:shadowRadius="3"
+            android:text="editar PERFIL" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import com.example.fpr_interfaces.adaptadores.ListaTerapiasPorTerapeutaAdapter;
 import com.example.fpr_interfaces.db.DbClientes;
@@ -15,10 +16,13 @@ public class Terapeuta extends AppCompatActivity {
     Bundle extras;
     String newString;
     RecyclerView recyclerTerapiasporTerapeuta;
+    Button antecedentes;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_terapeuta);
+
+        antecedentes = findViewById(R.id.antecedentes);
 
         extras = getIntent().getExtras();
         if(extras == null) {
@@ -35,6 +39,11 @@ public class Terapeuta extends AppCompatActivity {
                 (dbclientes.mostrarTerapiasPorTerapeuta(elTerapeutaes));
         recyclerTerapiasporTerapeuta.setAdapter(adaptador);
 
+        antecedentes.setOnClickListener(v -> {
+            Intent editarantecedentesterapeuta = new Intent(Terapeuta.this,Editarantecedentesterapeuta.class);
+            editarantecedentesterapeuta.putExtra("email",newString);
+            startActivity(editarantecedentesterapeuta);
+        });
     }
     public void editar (View v){
         Intent editar = new Intent(Terapeuta.this,EditarServicio.class);

@@ -5,10 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Terapeuta">
+    <Button
+        android:id="@+id/antecedentes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Editar antecedentes"
+        />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerTerapiasporTerapeuta"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/antecedentes"/>
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -344,4 +344,48 @@ public class DbClientes extends Dbhelper2{
                         ,String.valueOf(usuario)});
         cursor.getCount();
     }
+    public void editarantecedentes(String nombre,String descrip,String uduario){
+        Dbhelper2 dbhelper = new Dbhelper2(context);
+        SQLiteDatabase db = dbhelper.getWritableDatabase();
+
+        Cursor cursor = null;
+        cursor =db.rawQuery(
+                "UPDATE tb_terapeutas SET descripcion = ?, nombre= ? WHERE usuario = ?;"
+                ,new String [] {String.valueOf(descrip)
+                        ,String.valueOf(nombre)
+                        ,String.valueOf(uduario)});
+        cursor.getCount();
+    }
+    public String traernombreterapeutaconusuario(String usuario){
+        Dbhelper2 dbhelper = new Dbhelper2(context);
+        SQLiteDatabase db = dbhelper.getWritableDatabase();
+
+        String cliente = null;
+        Cursor cursor = null;
+
+        cursor = db.rawQuery("select nombre from tb_terapeutas where usuario=?",
+                new String [] {String.valueOf(usuario)});
+
+        if(cursor.moveToFirst()){
+            cliente=cursor.getString(0);
+        }
+        cursor.close();
+        return cliente;
+    }
+    public String traerdescripcionterapeutaconusuario(String usuario){
+        Dbhelper2 dbhelper = new Dbhelper2(context);
+        SQLiteDatabase db = dbhelper.getWritableDatabase();
+
+        String cliente = null;
+        Cursor cursor = null;
+
+        cursor = db.rawQuery("select descripcion from tb_terapeutas where usuario=?",
+                new String [] {String.valueOf(usuario)});
+
+        if(cursor.moveToFirst()){
+            cliente=cursor.getString(0);
+        }
+        cursor.close();
+        return cliente;
+    }
 }
