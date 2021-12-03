@@ -35,7 +35,7 @@ public class CargosAdicionales extends AppCompatActivity {
 
         aumentarsaldodecliente=findViewById(R.id.aumentarsaldodecliente);
         cargoadicional= findViewById(R.id.cargoadicional);
-        numeroaleatorio = (int)(Math.random()*15+4);
+        numeroaleatorio = (int)(Math.random()*3)+2;
         cargoadicional.setText("S/."+numeroaleatorio);
 
         aumentarsaldodecliente.setOnClickListener(v -> {

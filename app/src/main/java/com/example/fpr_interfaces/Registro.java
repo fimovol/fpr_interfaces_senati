@@ -24,14 +24,15 @@ public class Registro extends AppCompatActivity {
         usuarioregitro = findViewById(R.id.usuarioregitro);
         contrasenaregistro = findViewById(R.id.contrasenaregistro);
         contrasenaregistro2 = findViewById(R.id.contrasenaregistro2);
-        saldodecleente = findViewById(R.id.saldodecleente);
+        //saldodecleente = findViewById(R.id.saldodecleente);
         nombrecliente = findViewById(R.id.nombrecliente);
     }
     public void registrateusuario(View v){
         String uduari = usuarioregitro.getText().toString();
         String contra = contrasenaregistro.getText().toString();
         String contra2 = contrasenaregistro2.getText().toString();
-        String saldo = saldodecleente.getText().toString();
+        //String saldo = saldodecleente.getText().toString();
+        String saldo = "0";
         String nombre = nombrecliente.getText().toString();
 
         String cadena1 = new String(contra);
