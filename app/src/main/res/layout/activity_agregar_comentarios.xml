@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Agregar_comentarios">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dejanos tu Comentario"
+            android:textColor="@color/black"
+            android:textSize="23dp"
+            />
+        <EditText
+            android:id="@+id/comentarios"
+            android:layout_width="wrap_content"
+            android:hint="algun comentario?"
+            android:textColor="@color/black"
+            android:textSize="23dp"
+            android:gravity="top|left"
+            android:ems="9"
+            android:layout_height="180dp"
+            />
+        <RatingBar
+            android:id="@+id/estrellas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enviar"
+            />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
