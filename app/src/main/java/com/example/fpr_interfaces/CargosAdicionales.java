@@ -12,6 +12,9 @@ import com.example.fpr_interfaces.db.DbClientes;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 public class CargosAdicionales extends AppCompatActivity {
     Bundle extras;
     String newString;
@@ -54,7 +57,14 @@ public class CargosAdicionales extends AppCompatActivity {
                     int preciofinal = saldo_clienteint - precio_terapiaint;
                     String predioFinalString = String.valueOf(preciofinal);
                     db.cambiarSaldoCliente(email,predioFinalString);
-                    db.comprarTerapia(id_cliente,id_terapia);
+
+                    //añadiendo fecha
+                    LocalDateTime myDateObj = LocalDateTime.now();
+                    DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+                    String formattedDate = myDateObj.format(myFormatObj);
+                    System.out.println("After formatting: " + formattedDate);
+
+                    db.comprarTerapia(id_cliente,id_terapia,formattedDate);
                     Intent i = new Intent(this,pruebabuscador.class);
                     i.putExtra("email",email);
                     startActivity(i);

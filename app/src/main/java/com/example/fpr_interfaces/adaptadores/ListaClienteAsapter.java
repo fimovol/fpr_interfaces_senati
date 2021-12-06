@@ -66,6 +66,7 @@ public class ListaClienteAsapter extends RecyclerView.Adapter<ListaClienteAsapte
             //sacar descripcion del terapeuta con el id de la base de datos
             i.putExtra("imagen",String.valueOf(listaClientes.get(position).getImagen()));
             i.putExtra("id_terapeuta",listaClientes.get(position).getId_terapeuta());
+            i.putExtra("terapia",listaClientes.get(position).getId_terapia());
             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
             if (user != null) {
                 String email = user.getEmail();

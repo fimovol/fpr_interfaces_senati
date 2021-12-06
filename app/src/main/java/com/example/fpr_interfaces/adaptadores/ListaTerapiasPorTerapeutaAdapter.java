@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fpr_interfaces.EditarServicio;
+import com.example.fpr_interfaces.Quien_compro_el_servicio;
 import com.example.fpr_interfaces.R;
 import com.example.fpr_interfaces.detalle;
 import com.example.fpr_interfaces.entidades.Terapiasentidad;
@@ -42,6 +43,12 @@ public class ListaTerapiasPorTerapeutaAdapter extends RecyclerView.Adapter<Lista
         holder.descipterapiaplantilla.setText(listaterapias.get(position).getDescripcion());
         if(listaterapias.get(position).getCompradoSiNo().equals("1")){
             holder.anadircolordecompra.setBackgroundColor(0xff80ff80);//verde clarito jeje
+            holder.botoneditarTerapia.setVisibility(View.INVISIBLE);
+            holder.itemView.setOnClickListener(v -> {
+                Intent i = new Intent(holder.itemView.getContext(), Quien_compro_el_servicio.class);
+                i.putExtra("id_terapia",listaterapias.get(position).getId_terapia());
+                holder.itemView.getContext().startActivity(i);
+            });
         }
         holder.botoneditarTerapia.setOnClickListener(v -> {
             Intent i = new Intent(holder.itemView.getContext(), EditarServicio.class);
@@ -58,6 +65,7 @@ public class ListaTerapiasPorTerapeutaAdapter extends RecyclerView.Adapter<Lista
 
             holder.itemView.getContext().startActivity(i);
         });
+
     }
 
     @Override

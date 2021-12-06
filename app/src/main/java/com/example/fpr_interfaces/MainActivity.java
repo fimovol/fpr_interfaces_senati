@@ -20,6 +20,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 
+
 public class MainActivity extends AppCompatActivity {
     Button logeo,registro;
     CheckBox checkterapeuta;
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         checkterapeuta = findViewById(R.id.checkterapeuta);
         usuario = findViewById(R.id.usuario);
         contrasena = findViewById(R.id.contrasena);
+
     }
     public void registro(View v){
         String usuari = usuario.getText().toString();

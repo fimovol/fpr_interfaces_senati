@@ -22,7 +22,7 @@
             android:layout_width="wrap_content"
             android:hint="algun comentario?"
             android:textColor="@color/black"
-            android:textSize="23dp"
+            android:textSize="19dp"
             android:gravity="top|left"
             android:ems="9"
             android:layout_height="180dp"
@@ -34,6 +34,7 @@
             android:numStars="5"
             />
         <Button
+            android:id="@+id/enviar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Enviar"

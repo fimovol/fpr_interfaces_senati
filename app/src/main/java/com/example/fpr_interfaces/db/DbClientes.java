@@ -282,14 +282,15 @@ public class DbClientes extends Dbhelper2{
                 ,new String [] {String.valueOf(idDeLaTerapia)});
         cursor.getCount();
     }
-    public void comprarTerapia(int id_clientefk ,String id_terapia){
+    public void comprarTerapia(int id_clientefk ,String id_terapia,String fecha){
         Dbhelper2 dbhelper = new Dbhelper2(context);
         SQLiteDatabase db = dbhelper.getWritableDatabase();
 
         Cursor cursor = null;
         cursor =db.rawQuery(
-                "UPDATE terapias SET id_clientefk = ?,comprado=1 WHERE id_terapia = ?;"
+                "UPDATE terapias SET id_clientefk = ?,comprado=1,fecha=? WHERE id_terapia = ?;"
                 ,new String [] {String.valueOf(id_clientefk)
+                        ,String.valueOf(fecha)
                         ,String.valueOf(id_terapia)});
         cursor.getCount();
     }
@@ -387,5 +388,75 @@ public class DbClientes extends Dbhelper2{
         }
         cursor.close();
         return cliente;
+    }
+    public String traerusuariodeclientesconid_terapia(String id_terapia){
+        Dbhelper2 dbhelper = new Dbhelper2(context);
+        SQLiteDatabase db = dbhelper.getWritableDatabase();
+
+        String cliente = null;
+        Cursor cursor = null;
+
+        cursor = db.rawQuery("select b.usuario from terapias as a,tb_cliente as b where a.id_clientefk=b.id_cliente and a.id_terapia=?",
+                new String [] {String.valueOf(id_terapia)});
+
+        if(cursor.moveToFirst()){
+            cliente=cursor.getString(0);
+        }
+        cursor.close();
+        return cliente;
+    }
+    public String traerestrellasdeclientesconid_terapia(String id_terapia){
+        Dbhelper2 dbhelper = new Dbhelper2(context);
+        SQLiteDatabase db = dbhelper.getWritableDatabase();
+        Cursor cursor = null;
+        cursor = db.rawQuery(
+                "select a.estrellas from terapias as a,tb_cliente as b where a.id_clientefk=b.id_cliente and a.id_terapia=?"
+                ,new String [] {String.valueOf(id_terapia)});
+        if(cursor.moveToFirst()){
+            String usuario=cursor.getString(0);
+
+            return usuario;
+        }
+        return null;
+    }
+    public String traercomentariodeclientesconid_terapia(String id_terapia){
+        Dbhelper2 dbhelper = new Dbhelper2(context);
+        SQLiteDatabase db = dbhelper.getWritableDatabase();
+        Cursor cursor = null;
+        cursor = db.rawQuery(
+                "select a.comentario from terapias as a,tb_cliente as b where a.id_clientefk=b.id_cliente and a.id_terapia=?"
+                ,new String [] {String.valueOf(id_terapia)});
+        if(cursor.moveToFirst()){
+            String usuario=cursor.getString(0);
+
+            return usuario;
+        }
+        return null;
+    }
+    public String traerfechadeclientesconid_terapia(String id_terapia){
+        Dbhelper2 dbhelper = new Dbhelper2(context);
+        SQLiteDatabase db = dbhelper.getWritableDatabase();
+        Cursor cursor = null;
+        cursor = db.rawQuery(
+                "select fecha from terapias where id_terapia=?"
+                ,new String [] {String.valueOf(id_terapia)});
+        if(cursor.moveToFirst()){
+            String usuario=cursor.getString(0);
+
+            return usuario;
+        }
+        return null;
+    }
+
+    public void cambiarcomentarios(String comentario,String estrellas,String id_terapia){
+        Dbhelper2 dbhelper = new Dbhelper2(context);
+        SQLiteDatabase db = dbhelper.getWritableDatabase();
+
+        Cursor cursor = null;
+        cursor =db.rawQuery("UPDATE terapias SET comentario = ?,estrellas = ? WHERE id_terapia = ?;"
+                ,new String [] {String.valueOf(comentario)
+                        ,String.valueOf(estrellas)
+                        ,String.valueOf(id_terapia)});
+        cursor.getCount();
     }
 }

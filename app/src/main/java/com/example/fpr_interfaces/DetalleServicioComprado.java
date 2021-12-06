@@ -15,9 +15,9 @@ public class DetalleServicioComprado extends AppCompatActivity {
     ImageView imageView;
 
     RatingBar estrellas;
-
+    DbClientes dbconsulta = new DbClientes(this);
     Bundle extras;
-    String newString,id_terapeuta,nombre,descripcion,correodelterapeuta;
+    String newString,id_terapeuta,nombre,descripcion,correodelterapeuta,terapia,comprobarcomentario;
     int imagen;
     DbClientes db = new DbClientes(this);
     @Override
@@ -42,8 +42,18 @@ public class DetalleServicioComprado extends AppCompatActivity {
             correodelterapeuta = db.usuarioDelTerapeuta(id_terapeuta);
             nombre = extras.getString("nombre");
             imagen= Integer.parseInt(extras.getString("imagen"));
+            terapia=extras.getString("terapia");
             setTitle(newString);
         }
+        comprobarcomentario=dbconsulta.traerestrellasdeclientesconid_terapia(terapia);
+        if(comprobarcomentario==null){
+            System.out.println("es nulll "+comprobarcomentario);
+        }else{
+            estrellas.setRating(Float.parseFloat(comprobarcomentario));
+            estrellas.setIsIndicator(true);
+            System.out.println("tiene algo aqui "+comprobarcomentario);
+        }
+
         usuariocorreo.setText(correodelterapeuta);
         descripciontextview.setText(descripcion);
         nombretextview.setText(nombre);
@@ -55,6 +65,7 @@ public class DetalleServicioComprado extends AppCompatActivity {
                 Intent comentarios = new Intent(DetalleServicioComprado.this,Agregar_comentarios.class);
                 String calificacion = String.valueOf(rating);
                 comentarios.putExtra("calificacion",calificacion);
+                comentarios.putExtra("terapia",terapia);
                 comentarios.putExtra("titulo",newString);
                 startActivity(comentarios);
             }
