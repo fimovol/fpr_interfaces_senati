@@ -1,6 +1,6 @@
 # trabajo final de mi instituto 
 
-_trabajo final de mi instituto uso diferentes tecnología como java, firebawse, sqlite y dependencias de java para moviles. Para crear una aplicacion para moviles en la que puedes comprar y vender de manera de ejemplo diferentes servicios como terapias o cursos_
+_trabajo final de mi instituto uso diferentes tecnología como java, firebase, sqlite y dependencias de java para moviles. Para crear una aplicacion para moviles en la que puedes comprar y vender de manera de ejemplo diferentes servicios como terapias o cursos_
 
 ## Comenzando 🚀
 
