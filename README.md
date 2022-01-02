@@ -29,3 +29,7 @@ necesitarás :
 _está aplicacion es un trata es un ejemplo de compra y venta de servicios que puedes ejecutarla de manera local en tu teléfono o en android studio de la siguiente manera_
 
 * [como instalarlo](https://www.youtube.com/watch?v=v6-Y1ZOueCk&ab_channel=MarcoAntonioBar%C3%B3nEffio)
+
+## Video de ejemplo 📦
+
+* [video de ejemplo](https://youtu.be/gWie452fI78)
